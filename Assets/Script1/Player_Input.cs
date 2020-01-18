@@ -9,10 +9,11 @@ public class Player_Input : MonoBehaviour
     //public Inventory playerInventory;
 
     public Rigidbody2D body;
-
-    [Header("Debug: DO NOT SET")]
     public float velocityHor;
     public float velocityVer;
+
+    [Header("Debug: DO NOT SET")]
+   
     public Vector2 dir;
 
     public float fallRate;
@@ -32,17 +33,17 @@ public class Player_Input : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void Update()
     {
-        dataValidation();
+        //dataValidation();
 
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
         float dirHorizontal = Input.GetAxis("Horizontal");
         float dirVertical = Input.GetAxis("Vertical");
         this.dir = new Vector2(dirHorizontal * velocityHor, dirVertical * velocityVer);
-        // body.velocity = new Vector2(dirHorizontal,dirVertical)
-        // * new Vector2(velocityHor, velocityVer);
 
+
+        Debug.Log("Moved");
         if (canMove)
         {
             body.MovePosition(position + dir);
