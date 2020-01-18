@@ -9,7 +9,15 @@ public class Diolog_Manager : MonoBehaviour
     public GameObject diologueBox;
     public Text dialogeDisplay;
 
-    public Queue<string> queue; // queue array
+    public float textAnimateSpeed;
+
+    public AudioSource source;
+    public AudioClip textAnimateClip;
+    public AudioClip closeDiologSoundClip;
+
+
+    public bool displaySentence;
+    
 
 
 
@@ -17,12 +25,26 @@ public class Diolog_Manager : MonoBehaviour
     //public Help_Notification helpNotification; // script
 
     [Header("Debug")]
+    public Queue<string> queue; // queue array
     public string[] sentences;
     public string dialog;
     public bool diolgueActive;
+    public bool nextLetter;
+
+     void Awake()
+    {
+        nextLetter = true;
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        nextLetter = true;
+        if (textAnimateSpeed <= 0f)
+        {
+            textAnimateSpeed = 0.3f;
+        }
         //helpNotification = gameObject.transform.parent.GetComponentInChildren<Help_Notification>();
         queue = new Queue<string>(0);
 
@@ -45,6 +67,7 @@ public class Diolog_Manager : MonoBehaviour
     void Update()
     {
         listener();
+        displaySentenceListener();
 
     }
 
@@ -55,7 +78,7 @@ public class Diolog_Manager : MonoBehaviour
             queue.Enqueue(s);
         }
 
-        dialogeDisplay.text = queue.Dequeue();
+        
 
     }
 
@@ -69,11 +92,14 @@ public class Diolog_Manager : MonoBehaviour
         if (diolgueActive)
         {
             listenForPayerConfirm();
+            
         }
         else
         {
             disableDiologueBox();
         }
+
+       
 
     }
 
@@ -88,12 +114,73 @@ public class Diolog_Manager : MonoBehaviour
             }
             else
             {
-                dialogeDisplay.text = queue.Dequeue();
+                StopAllCoroutines();
+                StartCoroutine(displayNextSentence());
 
             }
 
         }
     }
+    public void displaySentenceListener()
+    {
+        if (displaySentence)
+        {
+            StartCoroutine(displayNextSentence());
+            displaySentence = false;
+        }
+    }
+
+    public IEnumerator displayNextSentence()
+    {
+        dialogeDisplay.text = "";
+        float seconds = textAnimateSpeed;
+        if (queue.Count > 0)
+        {
+            nextLetter = true;
+            char[] letters;
+            string text = queue.Dequeue();
+            letters = text.ToCharArray();
+            
+            foreach (char letter in letters)
+            {
+                if (nextLetter)
+                {
+                    source.Stop();
+                    dialogeDisplay.text += letter;
+                    if (source.clip != textAnimateClip)
+                    {
+                        source.clip = textAnimateClip;
+                        
+                    }
+                    source.Play();
+
+                    // StartCoroutine(delay(1f, letter));
+                    yield return new WaitForSeconds(seconds);
+
+                    
+                }
+                else
+                {
+                    source.Stop();
+                    yield return new WaitForSeconds(seconds);
+                }
+               
+            }
+            source.Stop();
+            yield return new WaitForSeconds(0f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0f);
+        }
+        
+
+        
+    }
+
+   
+
+   
 
     public void activateDiologueBox()
     {
@@ -103,10 +190,14 @@ public class Diolog_Manager : MonoBehaviour
     public void disableDiologueBox()
     {
         diolgueActive = false;
+        
 
         if (diologueBox.GetComponent<Canvas>().enabled)
         {
             diologueBox.GetComponent<Canvas>().enabled = false;
+            source.clip = closeDiologSoundClip;
+            
+            source.Play();
         }
 
     }
