@@ -23,7 +23,7 @@ public class Game_Manager : MonoBehaviour
             Application.targetFrameRate = targetFrameRate;
             
         }
-        if (QualitySettings.vSyncCount != 0;)
+        if (QualitySettings.vSyncCount != 0)
         {
             QualitySettings.vSyncCount = 0;
         }

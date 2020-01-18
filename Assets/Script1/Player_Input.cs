@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Player_Input : MonoBehaviour
 {
-    [SerializeField]
-    private KeyCode jump;
+    
 
     //public Inventory playerInventory;
 
