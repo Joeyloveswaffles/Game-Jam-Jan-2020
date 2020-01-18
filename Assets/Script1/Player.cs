@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public Vector2 currentDirection;
     public Vector2 debugDir;
     public bool alive;
+    public bool moving;
     public int currency;
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,11 @@ public class Player : MonoBehaviour
         if (inputs.dir.x != 0 || inputs.dir.y != 0)
         {
             currentDirection = inputs.dir;
+            moving = true;
+        }
+        else
+        {
+            moving = false;
         }
 
     }

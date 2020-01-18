@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     public Vector2 vectorDir;
     public float velocity;
     public bool listenForDeath;
+    public string collisionInfoName;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,12 +52,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
-        
+
+        collisionInfoName = collision.name;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        collisionInfoName = "";
     }
 }

@@ -16,8 +16,6 @@ public class Player_Input : MonoBehaviour
    
     public Vector2 dir;
 
-    public float fallRate;
-    public float lowJumRate;
     public bool isTriggered;
     public bool canMove;
 
