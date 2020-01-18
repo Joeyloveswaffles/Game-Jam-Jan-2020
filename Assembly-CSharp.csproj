@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script1\Camera_Follow.cs" />
+    <Compile Include="Assets\Script1\Conversation.cs" />
     <Compile Include="Assets\Script1\Diolog.cs" />
+    <Compile Include="Assets\Script1\Foot_Step_Manager.cs" />
+    <Compile Include="Assets\Script1\Game_Manager.cs" />
     <Compile Include="Assets\Script1\Player.cs" />
     <Compile Include="Assets\Script1\Player_Input.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
