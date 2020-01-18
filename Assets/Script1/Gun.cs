@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    [Header("Gun settings")]
+    public float fireRate;
     public int maxAmmo;
     public int clipSize;
     public int currentAmmo;
@@ -13,6 +15,7 @@ public class Gun : MonoBehaviour
     public Transform bulletSpawn;
     public GameObject bulletPrefab;
 
+    [Header("Sound settings")]
     public AudioSource source;
     public AudioClip firesound;
     public AudioClip reloadSound;
@@ -25,6 +28,7 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canShoot = true;
         
         
     }
@@ -37,17 +41,23 @@ public class Gun : MonoBehaviour
 
     public void controlListener()
     {
-        if (Input.GetKeyDown(shootControl))
+        if (Input.GetKeyDown(shootControl) && checkFireRate())
         {
             shoot();
         }
 
     }
 
+    public bool checkFireRate()
+    {
+        return canShoot;
+    }
+
     public void shoot()
     {
         if (currentAmmo > 0 && currentAmmo <= clipSize)
         {
+            canShoot = false;
             source.clip = firesound;
             source.Play();
             GameObject bulletObj = bulletPrefab;
@@ -55,12 +65,22 @@ public class Gun : MonoBehaviour
             newBullet.transform.position = bulletSpawn.position;
             currentAmmo -= 1;
 
+            StartCoroutine(fireRateDelay());
+
             if (currentAmmo <= 0)
             {
+                reload();
 
             }
             //newBullet.transform.SetParent(null);
         }
+    }
+
+    public IEnumerator fireRateDelay()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(fireRate);
+        canShoot = true;
     }
 
     public void reload()

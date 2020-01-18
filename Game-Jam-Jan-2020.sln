@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-<<<<<<< HEAD
-# Visual Studio 15
-=======
 # Visual Studio 16
->>>>>>> 0c7396742dac7fd97966f84036b00d3481c75d97
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{3ABA9B21-7435-A958-57B5-48E4729CF748}"
 EndProject
 Global
@@ -21,10 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-=======
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
->>>>>>> 0c7396742dac7fd97966f84036b00d3481c75d97
 EndGlobal
