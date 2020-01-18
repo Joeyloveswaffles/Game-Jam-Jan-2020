@@ -60,11 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script1\Bullet.cs" />
     <Compile Include="Assets\Script1\Camera_Follow.cs" />
     <Compile Include="Assets\Script1\Conversation.cs" />
     <Compile Include="Assets\Script1\Diolog_Manager.cs" />
     <Compile Include="Assets\Script1\Foot_Step_Manager.cs" />
     <Compile Include="Assets\Script1\Game_Manager.cs" />
+    <Compile Include="Assets\Script1\Gun.cs" />
     <Compile Include="Assets\Script1\Player.cs" />
     <Compile Include="Assets\Script1\Player_Input.cs" />
     <Compile Include="Assets\Scripts2\LevelChanger.cs" />

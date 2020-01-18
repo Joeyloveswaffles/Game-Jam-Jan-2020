@@ -13,7 +13,10 @@ public class Diolog_Manager : MonoBehaviour
 
     public AudioSource source;
     public AudioClip textAnimateClip;
+    public AudioClip closeDiologSoundClip;
 
+
+    public bool displaySentence;
     
 
 
@@ -27,9 +30,17 @@ public class Diolog_Manager : MonoBehaviour
     public string dialog;
     public bool diolgueActive;
     public bool nextLetter;
+
+     void Awake()
+    {
+        nextLetter = true;
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        nextLetter = true;
         if (textAnimateSpeed <= 0f)
         {
             textAnimateSpeed = 0.3f;
@@ -56,6 +67,7 @@ public class Diolog_Manager : MonoBehaviour
     void Update()
     {
         listener();
+        displaySentenceListener();
 
     }
 
@@ -66,7 +78,6 @@ public class Diolog_Manager : MonoBehaviour
             queue.Enqueue(s);
         }
 
-        StartCoroutine(displaySentence(textAnimateSpeed));
         
 
     }
@@ -81,11 +92,14 @@ public class Diolog_Manager : MonoBehaviour
         if (diolgueActive)
         {
             listenForPayerConfirm();
+            
         }
         else
         {
             disableDiologueBox();
         }
+
+       
 
     }
 
@@ -100,26 +114,38 @@ public class Diolog_Manager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(displaySentence(textAnimateSpeed));
+                StopAllCoroutines();
+                StartCoroutine(displayNextSentence());
 
             }
 
         }
     }
-
-    public IEnumerator  displaySentence(float seconds)
+    public void displaySentenceListener()
     {
+        if (displaySentence)
+        {
+            StartCoroutine(displayNextSentence());
+            displaySentence = false;
+        }
+    }
+
+    public IEnumerator displayNextSentence()
+    {
+        dialogeDisplay.text = "";
+        float seconds = textAnimateSpeed;
         if (queue.Count > 0)
         {
             nextLetter = true;
             char[] letters;
             string text = queue.Dequeue();
             letters = text.ToCharArray();
-            dialogeDisplay.text = "";
+            
             foreach (char letter in letters)
             {
                 if (nextLetter)
                 {
+                    source.Stop();
                     dialogeDisplay.text += letter;
                     if (source.clip != textAnimateClip)
                     {
@@ -133,7 +159,14 @@ public class Diolog_Manager : MonoBehaviour
 
                     
                 }
+                else
+                {
+                    source.Stop();
+                    yield return new WaitForSeconds(seconds);
+                }
+               
             }
+            source.Stop();
             yield return new WaitForSeconds(0f);
         }
         else
@@ -157,10 +190,14 @@ public class Diolog_Manager : MonoBehaviour
     public void disableDiologueBox()
     {
         diolgueActive = false;
+        
 
         if (diologueBox.GetComponent<Canvas>().enabled)
         {
             diologueBox.GetComponent<Canvas>().enabled = false;
+            source.clip = closeDiologSoundClip;
+            
+            source.Play();
         }
 
     }
