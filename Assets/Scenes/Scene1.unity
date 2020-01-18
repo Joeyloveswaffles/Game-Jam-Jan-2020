@@ -8591,5 +8591,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 577676783}
+    - target: {fileID: 4665727394319757020, guid: 03641beff456f3345b4333352bcf70fe,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03641beff456f3345b4333352bcf70fe, type: 3}
