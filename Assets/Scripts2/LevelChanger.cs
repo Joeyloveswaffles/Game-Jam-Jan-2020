@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelChanger : MonoBehaviour
+public class LevelChanger : Singleton<LevelChanger>
 {
     public Animator animator;
     public bool activate;
@@ -15,12 +15,12 @@ public class LevelChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Statement Failed");
             if (activate)
             {
-                activate = false;
                 FadeToLevel(1);
             }
         }
