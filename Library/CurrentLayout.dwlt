@@ -131,8 +131,8 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1368
     height: 780
-  m_MinSize: {x: 679, y: 498}
-  m_MaxSize: {x: 14002, y: 14048}
+  m_MinSize: {x: 683, y: 498}
+  m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
   controlID: 57
 =======
@@ -178,11 +178,19 @@ MonoBehaviour:
     x: 1518
 >>>>>>> 1e67ed9d376f6d5bbe2ff88bbce0d9fdf57be30b
     y: 0
+<<<<<<< HEAD
     width: 386
     height: 931
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
+=======
+    width: 277
+    height: 780
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
+  m_ActualView: {fileID: 15}
+>>>>>>> NikoMerge
   m_Panes:
 <<<<<<< HEAD
   - {fileID: 15}
@@ -227,6 +235,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 270
     height: 472
+<<<<<<< HEAD
 =======
     width: 376
     height: 563
@@ -234,6 +243,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
+=======
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
+  m_ActualView: {fileID: 16}
+>>>>>>> NikoMerge
   m_Panes:
 <<<<<<< HEAD
   - {fileID: 16}
@@ -337,12 +351,16 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1368
     height: 830
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 300}
 =======
     width: 1904
     height: 981
   m_MinSize: {x: 950, y: 548}
 >>>>>>> 1e67ed9d376f6d5bbe2ff88bbce0d9fdf57be30b
+=======
+  m_MinSize: {x: 950, y: 548}
+>>>>>>> NikoMerge
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &10
 MonoBehaviour:
@@ -410,9 +428,10 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1091
     height: 780
-  m_MinSize: {x: 404, y: 498}
+  m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
+<<<<<<< HEAD
   controlID: 103
 =======
     width: 1213
@@ -431,6 +450,9 @@ MonoBehaviour:
   vertical: 1
   controlID: 77
 >>>>>>> 1e67ed9d376f6d5bbe2ff88bbce0d9fdf57be30b
+=======
+  controlID: 58
+>>>>>>> NikoMerge
 --- !u!114 &10
 =======
   controlID: 58
@@ -458,9 +480,10 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 1091
     height: 472
-  m_MinSize: {x: 404, y: 224}
-  m_MaxSize: {x: 8004, y: 4024}
+  m_MinSize: {x: 406, y: 224}
+  m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
+<<<<<<< HEAD
   controlID: 104
 =======
     width: 1213
@@ -479,6 +502,9 @@ MonoBehaviour:
   vertical: 0
   controlID: 78
 >>>>>>> 1e67ed9d376f6d5bbe2ff88bbce0d9fdf57be30b
+=======
+  controlID: 59
+>>>>>>> NikoMerge
 --- !u!114 &11
 =======
   controlID: 59
@@ -504,8 +530,8 @@ MonoBehaviour:
 <<<<<<< HEAD
     width: 821
     height: 472
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 17}
 =======
     width: 1142
@@ -760,6 +786,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
     scrollPos: {x: 0, y: 133}
+<<<<<<< HEAD
     m_SelectedIDs: ca0a0000
     m_LastClickedID: 2762
     m_ExpandedIDs: 00000000c00900002e0a0000ca0a0000fa0b0000
@@ -781,6 +808,11 @@ MonoBehaviour:
     m_LastClickedID: 3258
     m_ExpandedIDs: 00000000b209000000ca9a3b
 >>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
+=======
+    m_SelectedIDs: cc270000
+    m_LastClickedID: 10188
+    m_ExpandedIDs: 00000000c226000030270000cc270000f8280000
+>>>>>>> NikoMerge
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -811,6 +843,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000c00900002e0a0000ca0a0000fa0b0000
 =======
     m_ExpandedIDs: 000000008c280000
@@ -821,6 +854,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000b2090000
 >>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
+=======
+    m_ExpandedIDs: 00000000c226000030270000cc270000f8280000
+>>>>>>> NikoMerge
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -849,7 +885,11 @@ MonoBehaviour:
     m_LastClickedInstanceID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 1
+=======
+    m_HadKeyboardFocusLastEvent: 0
+>>>>>>> NikoMerge
     m_ExpandedInstanceIDs: c6230000940b0000
 =======
     m_HadKeyboardFocusLastEvent: 0
@@ -1003,6 +1043,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: 98edffff
       m_LastClickedID: -4712
       m_ExpandedIDs: 98edffffacedffff62f0fffff6f0ffffc2fbffffd6fbffff420e00006a0e0000ea2f00000831000030310000
@@ -1020,6 +1061,11 @@ MonoBehaviour:
 =======
       m_ExpandedIDs: d6fbffff
 >>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: a4fbffff
+>>>>>>> NikoMerge
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1084,8 +1130,13 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 270
     y: 72
+=======
+    x: -15730
+    y: -15970
+>>>>>>> NikoMerge
     width: 817
     height: 452
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -1114,6 +1165,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 727.2064, y: 47.333096, z: -1.676911}
     speed: 2
     m_Value: {x: 727.2064, y: 47.333096, z: -1.676911}
@@ -1132,6 +1184,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 33.044502, y: 81.04383, z: -0.84375}
 >>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
+=======
+    m_Target: {x: 392.69983, y: 200.30028, z: -7.0176344}
+    speed: 2
+    m_Value: {x: 392.69983, y: 200.30028, z: -7.0176344}
+>>>>>>> NikoMerge
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1166,6 +1223,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 220.8688
     speed: 2
     m_Value: 220.8688
@@ -1184,6 +1242,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 99.22923
 >>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
+=======
+    m_Target: 754.707
+    speed: 2
+    m_Value: 754.707
+>>>>>>> NikoMerge
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1267,6 +1330,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_HBaseRangeMin: -204.25
     m_HBaseRangeMax: 204.25
     m_VBaseRangeMin: -108.75
@@ -1289,6 +1353,12 @@ MonoBehaviour:
     m_VBaseRangeMin: -198
     m_VBaseRangeMax: 198
 >>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
+=======
+    m_HBaseRangeMin: -408.5
+    m_HBaseRangeMax: 408.5
+    m_VBaseRangeMin: -217.5
+    m_VBaseRangeMax: 217.5
+>>>>>>> NikoMerge
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1311,7 +1381,7 @@ MonoBehaviour:
 <<<<<<< HEAD
       width: 817
       height: 435
-    m_Scale: {x: 2, y: 2}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 408.5, y: 217.5}
 =======
       width: 973
@@ -1340,6 +1410,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       x: -204.25
       y: -108.75
       width: 408.5
@@ -1356,11 +1427,18 @@ MonoBehaviour:
       width: 1138
       height: 526
 >>>>>>> 1e67ed9d376f6d5bbe2ff88bbce0d9fdf57be30b
+=======
+      x: -408.5
+      y: -217.5
+      width: 817
+      height: 435
+>>>>>>> NikoMerge
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
 <<<<<<< HEAD
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_LastWindowPixelSize: {x: 1634, y: 904}
 =======
@@ -1381,6 +1459,9 @@ MonoBehaviour:
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 909, y: 413}
 >>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
+=======
+  m_LastWindowPixelSize: {x: 817, y: 452}
+>>>>>>> NikoMerge
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
