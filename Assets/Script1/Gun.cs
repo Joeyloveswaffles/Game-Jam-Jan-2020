@@ -9,6 +9,9 @@ public class Gun : MonoBehaviour
     public int maxAmmo;
     public int clipSize;
     public int currentAmmo;
+    public bool shootIsCalled;
+    public bool reloadIsCalled;
+   
 
     [Header("Binding controls")]
     public KeyCode shootControl;
@@ -31,6 +34,8 @@ public class Gun : MonoBehaviour
     void Start()
     {
         canShoot = true;
+        shootIsCalled = false;
+        reloadIsCalled = false;
         
         
     }
@@ -81,9 +86,22 @@ public class Gun : MonoBehaviour
 
             StartCoroutine(fireRateDelay());
 
-            
+            shootIsCalled = true;
             //newBullet.transform.SetParent(null);
         }
+        else
+        {
+            shootIsCalled = false;
+        }
+    }
+
+    public bool shootMethodIsCalled()
+    {
+        if(shootIsCalled == true)
+        {
+            return true;
+        }
+        return false;
     }
 
     public IEnumerator fireRateDelay()
@@ -100,17 +118,26 @@ public class Gun : MonoBehaviour
         if (maxAmmo < clipSize)
         {
             currentAmmo = maxAmmo;
+            reloadIsCalled = true;
         }
         else
         {
             maxAmmo -= currentAmmo;
             currentAmmo = clipSize;
-
+            reloadIsCalled = false;
         }
             
        
 
 
 
+    }
+    public bool reloadMethodIsCalled()
+    {
+        if (reloadIsCalled == true)
+        {
+            return true;
+        }
+        return false;
     }
 }
