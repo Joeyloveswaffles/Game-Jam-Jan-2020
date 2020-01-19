@@ -60,11 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Assets\Game_Controller.cs" />
-=======
     <Compile Include="Assets\Art\Animation Object.cs" />
->>>>>>> 1e67ed9d376f6d5bbe2ff88bbce0d9fdf57be30b
+    <Compile Include="Assets\Game_Controller.cs" />
+    <Compile Include="Assets\Gun_Animation_Manager.cs" />
+    <Compile Include="Assets\Player_Animation_Manager.cs" />
     <Compile Include="Assets\Script1\AI.cs" />
     <Compile Include="Assets\Script1\Animation_Manager.cs" />
     <Compile Include="Assets\Script1\Bullet.cs" />
