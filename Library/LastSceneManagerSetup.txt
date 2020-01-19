@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Tilemap Test.unity
+- path: Assets/Scenes/Vault Test.unity
   isLoaded: 1
   isActive: 1
