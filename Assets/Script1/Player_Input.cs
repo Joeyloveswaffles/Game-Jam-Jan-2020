@@ -30,6 +30,8 @@ public class Player_Input : MonoBehaviour
     public float centerX;
     public float centerY;
 
+    public Vector2 projectileLookDir;
+
 
 
     [SerializeField]
@@ -45,6 +47,7 @@ public class Player_Input : MonoBehaviour
     void Update()
     {
         //dataValidation();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponentInChildren<Game_Controller>();
 
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
         float dirHorizontal = Input.GetAxis("Horizontal");
@@ -95,6 +98,7 @@ public class Player_Input : MonoBehaviour
         mouseY = gameController.mouseY;
         centerX = gameController.CenterX;
         centerY = gameController.CenterY;
+        
 
 
         if (mouseX <= gameController.CenterX && mouseY <= gameController.CenterY)

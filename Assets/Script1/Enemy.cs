@@ -34,6 +34,10 @@ public class Enemy : MonoBehaviour
         {
             healthbar.recieveDamage(collision.gameObject.GetComponentInChildren<Bullet>().damage);
         }
+        else if (collision.gameObject.name == "Player")
+        {
+            collision.gameObject.GetComponentInChildren<HealthBar>().recieveDamage(damage);
+        }
 
     }
 
