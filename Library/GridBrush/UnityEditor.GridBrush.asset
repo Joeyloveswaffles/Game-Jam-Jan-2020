@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Default Brush
   m_EditorClassIdentifier: 
   m_Cells:
+<<<<<<< HEAD
   - m_Tile: {fileID: 11400000, guid: d92ba010b934efd42bae2b3f5a128833, type: 2}
+=======
+  - m_Tile: {fileID: 11400000, guid: 698600512a2823c4297e0917c5f1609c, type: 2}
+>>>>>>> GetBackScene
     m_Matrix:
       e00: 1
       e01: 0
