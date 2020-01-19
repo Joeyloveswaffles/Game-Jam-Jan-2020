@@ -19,11 +19,12 @@ public class Bullet : MonoBehaviour
         StartCoroutine(startDelay(2f));
         if (vectorDir.x == 0 && vectorDir.y == 0)
         {
-            vectorDir = new Vector2(0, 1);
+            vectorDir = new Vector2(0, 0.25f);
         }
         player = GameObject.Find("Player").GetComponentInChildren<Player>();
         vectorDir = new Vector2(player.currentDirection.x, player.currentDirection.y);
         vectorDir = vectorDir.normalized;
+        vectorDir = vectorDir / 8;
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour
     private void travel()
     {
         gameObject.transform.position = transform.position +  new Vector3(vectorDir.x * velocity, vectorDir.y * velocity, 0);
-        Debug.LogWarning(spriteRender.isVisible);
+
         if (spriteRender.isVisible == false && listenForDeath == true)
         {
             

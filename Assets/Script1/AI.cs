@@ -15,6 +15,8 @@ public class AI : MonoBehaviour
 
     public GameObject target;
 
+    public float detectionRange;
+
     [Header("Debug")]
     public GameObject pathFindingTarget;
     public string currentTargetName;
@@ -114,6 +116,16 @@ public class AI : MonoBehaviour
 
 
     }
+
+    private void checkPlayerDistance()
+    {
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        if (Vector2.Distance( new Vector2(gameObject.transform.position.x, transform.position.y), new Vector2(Player.transform.position.x, Player.transform.position.y)) <= detectionRange)
+        {
+            stopAndPersueTarget();
+
+        }
+    }
     
 
     public void startPatrol()
@@ -129,6 +141,10 @@ public class AI : MonoBehaviour
 
 
     }
+
+
+
+    
 
     public IEnumerator startPath(Transform[] points)
     {
@@ -147,6 +163,8 @@ public class AI : MonoBehaviour
              x2 = new Vector2(pathFindingTarget.transform.position.x, pathFindingTarget.transform.position.y);
             magnitude = Vector2.Distance(x1, x2);
             yield return new WaitUntil(() => magnitude <= 1f);
+
+            yield return new WaitForSeconds(1.5f);
 
         }
 

@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
     public int currentAmmo;
     public bool shootIsCalled;
     public bool reloadIsCalled;
+    public Sprite muzzleFlash;
+   
    
 
     [Header("Binding controls")]
@@ -33,6 +35,7 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bulletSpawn = GameObject.FindGameObjectWithTag("Respawn").transform;
         canShoot = true;
         shootIsCalled = false;
         reloadIsCalled = false;
@@ -76,6 +79,7 @@ public class Gun : MonoBehaviour
     {
         if (currentAmmo > 0 && currentAmmo <= clipSize)
         {
+            gameObject.GetComponentInParent<Gun_Animation_Manager>().shootAnimation();
             canShoot = false;
             source.clip = firesound;
             source.Play();
@@ -140,4 +144,6 @@ public class Gun : MonoBehaviour
         }
         return false;
     }
+
+    
 }

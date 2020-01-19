@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Backwar Face Player
+  m_Name: Backward Face
   m_EditorClassIdentifier: Assembly-CSharp::AnimationObject
   animationSprites:
   - {fileID: 21300000, guid: 1b29a1c8e2e135248ae687452cb562ba, type: 3}
@@ -20,6 +20,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3583c593dd6690448a44854ec27d7f41, type: 3}
   - {fileID: 21300000, guid: 69fc66d05514e004c9aff4986df0955e, type: 3}
   - {fileID: 21300000, guid: 9711aceb8cc457248a4b9cb50917df5f, type: 3}
-  - {fileID: 21300000, guid: 28395f8794d90af40a4398b1bf9e715f, type: 3}
   animationName: 
   instanceId: 

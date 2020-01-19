@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public Player_Input inputs;
     private Player_Singleton savedInstance;
     public HealthBar healthBar;
+    public Gun gun;
+    public float currentHealth;
 
     
 
@@ -28,15 +30,8 @@ public class Player : MonoBehaviour
        
         currency = 0;
         savedInstance = Player_Singleton.getInstance(new Player_Singleton());
-        if (savedInstance.ass6 == null)
-        {
-            savedInstance.ass6 = instanceDebug;
-            Debug.LogError("asss");
-        }
-        else
-        {
-            instanceDebug = savedInstance.ass6;
-        }
+        loadData();
+        DontDestroyOnLoad(gameObject);
        
 
     }
@@ -44,6 +39,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        saveData();
         if (inputs.canMove)
         {
             /*
@@ -65,56 +61,37 @@ public class Player : MonoBehaviour
         }
 
     }
-    /*
-    public void findSpriteDirection()
+    
+    public void saveData()
     {
-        debugDir = inputs.dir;
-        if (inputs.dir.x > 0 && inputs.dir.y > 0) // right and up
-        {
-            render.sprite = directionAnimations[0];
-        }
-        else if (inputs.dir.x < 0 && inputs.dir.y > 0) // left and up
-        {
-            render.sprite = directionAnimations[1];
+        savedInstance.healthBar = healthBar;
+        savedInstance.currentHealth = healthBar.currentHealth;
+        currentHealth = savedInstance.currentHealth;
+    }
 
-        }
-        else if (inputs.dir.x > 0 && inputs.dir.y < 0) // right and down
+    public void loadData()
+    {
+        if (savedInstance.healthBar != null)
         {
-            render.sprite = directionAnimations[2];
+            healthBar = savedInstance.healthBar;
+            if (savedInstance.currentHealth != 0)
+            {
+                healthBar.currentHealth = savedInstance.currentHealth;
+                currentHealth = savedInstance.currentHealth;
 
+            }
         }
-        else if (inputs.dir.x < 0 && inputs.dir.y < 0) // left and down
+
+        if (savedInstance.gun != null)
         {
-            render.sprite = directionAnimations[3];
-
+            gun = savedInstance.gun;
         }
-        else if (inputs.dir.x < 0 && inputs.dir.y == 0) // left
+        if (savedInstance.currentHealth > 0)
         {
-            render.sprite = directionAnimations[4];
-
-        }
-        else if (inputs.dir.x > 0 && inputs.dir.y == 0) // right
-        {
-            render.sprite = directionAnimations[5];
-
-        }
-        else if (inputs.dir.x == 0 && inputs.dir.y < 0) //down
-        {
-            render.sprite = directionAnimations[6];
-
-        }
-        else if (inputs.dir.x == 0 && inputs.dir.y > 0)  //up
-        {
-            render.sprite = directionAnimations[7];
-
-        }
-        else
-        {
-
-        }
+            currentHealth = savedInstance.currentHealth;
+          }
 
     }
-    */
 
     // Uses if we have currency system;
     public void gainCurrency()
