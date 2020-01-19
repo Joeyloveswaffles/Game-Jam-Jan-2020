@@ -15,7 +15,7 @@ public class LevelChanger : Singleton<LevelChanger>
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Statement Failed");
@@ -23,7 +23,7 @@ public class LevelChanger : Singleton<LevelChanger>
             {
                 FadeToLevel(1);
             }
-        }
+        }*/
     }
 
     public void FadeToLevel(int levelIndex)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class HealthBar : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public bool coolingDown;
-    public float waitTime = 1120.0f;
+    public float waitTime = 420.0f;
     public float currentFillPercent;
+    public bool inVoid;
 
     private void Start()
     {
@@ -20,14 +22,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (coolingDown == true)
-        {
-            //Reduce fill amount over 30 seconds
-            greenHealthBar.fillAmount -= 1.0f / waitTime * Time.deltaTime;
-        }
-        */
- 
         currentHealth = greenHealthBar.fillAmount * 100;
         currentFillPercent = greenHealthBar.fillAmount;
         /*
@@ -35,7 +29,19 @@ public class HealthBar : MonoBehaviour
         {
             whiteHealthBar.fillAmount += .01f;
         }*/
-        StartCoroutine(depleteHealth());
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            inVoid = true;
+        }
+        else
+        {
+            inVoid = false;
+
+        }
+        if (inVoid == true)
+        {
+            StartCoroutine(depleteHealth());
+        }
     }
 
     IEnumerator depleteHealth()
