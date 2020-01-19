@@ -18,6 +18,12 @@ public class Player_Input : MonoBehaviour
 
     public bool isTriggered;
     public bool canMove;
+    public bool quad1;
+    public bool quad2;
+    public bool quad3;
+    public bool quad4;
+    public float mouseX;
+    public float mouseY;
 
 
 
@@ -74,6 +80,14 @@ public class Player_Input : MonoBehaviour
 
 
 
+    }
+
+    public void findClickQuad()
+    {
+         mouseX = Input.mousePosition.x;
+        mouseY = Input.mousePosition.y;
+
+        
     }
 
 

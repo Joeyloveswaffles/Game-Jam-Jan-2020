@@ -13,7 +13,11 @@ public class Foot_Step_Manager : MonoBehaviour
     [Tooltip("Amount of time between foot steps")]
     public float footstepSoundDelay;
 
+   
+
+
     [Header("Debug")]
+   
     public bool activateSound;
     public bool leftFootActivated;
     public bool rightFootActivated;
@@ -36,18 +40,23 @@ public class Foot_Step_Manager : MonoBehaviour
         }
         
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (activateSound && gameObject.GetComponentInChildren<Player>().moving == true)
         {
             StartCoroutine(delay());
         }
 
         
+
+        
     }
+
 
     public IEnumerator delay()
     {
