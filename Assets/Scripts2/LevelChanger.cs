@@ -12,20 +12,7 @@ public class LevelChanger : Singleton<LevelChanger>
 
     void Start()
     {
-        instance = Player_Singleton.getInstance(new Player_Singleton());
-
         
-        if (instance.ass6 == null)
-        {
-            instance.ass6 = ass;
-            Debug.LogError("asss");
-        }
-        else
-        {
-            ass1 = instance.ass6;
-        }
-        ass1 = instance.ass6;
-        activate = true;
         
     }
 

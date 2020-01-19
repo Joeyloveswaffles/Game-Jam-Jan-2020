@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
+    private Player_Singleton instance;
     public Image greenHealthBar;
     public Image whiteHealthBar;
     public float maxHealth = 100;
@@ -18,6 +19,19 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        instance = Player_Singleton.getInstance(new Player_Singleton());
+
+
+        if (instance.currentHealth == null)
+        {
+            instance.currentHealth = currentHealth;
+            Debug.LogError("asss");
+        }
+        else
+        {
+            currentHealth = instance.currentHealth;
+        }
+        currentHealth = instance.currentHealth;
     }
     // Update is called once per frame
     void Update()

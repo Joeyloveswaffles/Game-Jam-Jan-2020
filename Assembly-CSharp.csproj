@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script1\Player_Input.cs" />
     <Compile Include="Assets\Script1\Player_Singleton.cs" />
     <Compile Include="Assets\Scripts2\EnterRift.cs" />
+    <Compile Include="Assets\Scripts2\GunUIDisplay.cs" />
     <Compile Include="Assets\Scripts2\HealthBar.cs" />
     <Compile Include="Assets\Scripts2\LevelChanger.cs" />
     <Compile Include="Assets\Scripts2\Singleton.cs" />
