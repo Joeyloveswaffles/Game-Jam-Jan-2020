@@ -1,15 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - path: Assets/Scenes/Vault Test.unity
-=======
-- path: Assets/Scenes/The Void 1.unity
->>>>>>> a4914f0fff9f51c6a7c2cbd9f9b0b24adf05429a
-=======
-- path: Assets/Scenes/The Void 1.unity
-=======
-- path: Assets/Scenes/Scene1.unity
->>>>>>> ca46daba723739227c18e1f781e371cb89554a80
->>>>>>> 268bf738ec7c648ef4f31ff0cc27df51ab6c1129
   isLoaded: 1
   isActive: 1
