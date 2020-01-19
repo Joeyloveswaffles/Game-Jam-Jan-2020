@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Player_Input inputs;
+    private Player_Singleton savedInstance;
 
     [Header("Player Animation Settings")]
     [Tooltip("Make true when all aniation slots are filled")]
@@ -22,12 +23,25 @@ public class Player : MonoBehaviour
     public Vector2 currentDirection;
     public Vector2 debugDir;
     public bool alive;
+    public bool moving;
     public int currency;
+    public string instanceDebug;
     // Start is called before the first frame update
     void Start()
     {
         render = gameObject.GetComponentInChildren<SpriteRenderer>();
         currency = 0;
+        savedInstance = Player_Singleton.getInstance(new Player_Singleton());
+        if (savedInstance.ass6 == null)
+        {
+            savedInstance.ass6 = instanceDebug;
+            Debug.LogError("asss");
+        }
+        else
+        {
+            instanceDebug = savedInstance.ass6;
+        }
+       
 
     }
 
@@ -45,6 +59,11 @@ public class Player : MonoBehaviour
         if (inputs.dir.x != 0 || inputs.dir.y != 0)
         {
             currentDirection = inputs.dir;
+            moving = true;
+        }
+        else
+        {
+            moving = false;
         }
 
     }

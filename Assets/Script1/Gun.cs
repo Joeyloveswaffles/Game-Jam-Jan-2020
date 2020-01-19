@@ -10,7 +10,9 @@ public class Gun : MonoBehaviour
     public int clipSize;
     public int currentAmmo;
 
+    [Header("Binding controls")]
     public KeyCode shootControl;
+    public KeyCode reloadControl;
     
     public Transform bulletSpawn;
     public GameObject bulletPrefab;
@@ -43,8 +45,20 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKeyDown(shootControl) && checkFireRate())
         {
-            shoot();
+            if (currentAmmo <= 0)
+            {
+                reload();
+            }
+            else
+            {
+                shoot();
+            }
         }
+        else if (Input.GetKeyDown(reloadControl))
+        {
+            reload();
+        }
+        
 
     }
 
@@ -67,11 +81,7 @@ public class Gun : MonoBehaviour
 
             StartCoroutine(fireRateDelay());
 
-            if (currentAmmo <= 0)
-            {
-                reload();
-
-            }
+            
             //newBullet.transform.SetParent(null);
         }
     }

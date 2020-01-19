@@ -17,6 +17,9 @@ public class Diolog_Manager : MonoBehaviour
 
 
     public bool displaySentence;
+    public bool sentenceFinished;
+
+    public string currentrSentence;
     
 
 
@@ -112,9 +115,18 @@ public class Diolog_Manager : MonoBehaviour
                 disableDiologueBox();
 
             }
-            else
+            else if (sentenceFinished == false)
             {
                 StopAllCoroutines();
+                source.Stop();
+                sentenceFinished = true;
+
+
+                dialogeDisplay.text = currentrSentence;
+
+            }
+            else
+            {
                 StartCoroutine(displayNextSentence());
 
             }
@@ -133,12 +145,14 @@ public class Diolog_Manager : MonoBehaviour
     public IEnumerator displayNextSentence()
     {
         dialogeDisplay.text = "";
+        sentenceFinished = false;
         float seconds = textAnimateSpeed;
         if (queue.Count > 0)
         {
             nextLetter = true;
             char[] letters;
             string text = queue.Dequeue();
+            currentrSentence = text;
             letters = text.ToCharArray();
             
             foreach (char letter in letters)
@@ -166,6 +180,7 @@ public class Diolog_Manager : MonoBehaviour
                 }
                
             }
+            sentenceFinished = true;
             source.Stop();
             yield return new WaitForSeconds(0f);
         }

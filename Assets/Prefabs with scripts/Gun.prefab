@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5df4a8fe6c01e46a4a33153772d859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0.5
   maxAmmo: 40
   clipSize: 10
-  currentAmmo: 5
+  currentAmmo: 10
   shootControl: 108
   bulletSpawn: {fileID: 4161647558996715246}
   bulletPrefab: {fileID: 4623153606439624215, guid: c2868606aa6220f4781efb61fae7b38d,
