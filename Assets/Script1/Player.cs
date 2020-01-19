@@ -7,12 +7,7 @@ public class Player : MonoBehaviour
     public Player_Input inputs;
     private Player_Singleton savedInstance;
 
-    [Header("Player Animation Settings")]
-    [Tooltip("Make true when all aniation slots are filled")]
-    public bool activateAnimations;
-    public SpriteRenderer render;
-    [Tooltip("Leave alone until you have all direction aniations...Must have 8 animations one fore each direction")]
-    public Sprite[] directionAnimations;
+    
 
     // public Player_Progression playerProgression; // if we decide to do
 
@@ -29,7 +24,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        render = gameObject.GetComponentInChildren<SpriteRenderer>();
+       
         currency = 0;
         savedInstance = Player_Singleton.getInstance(new Player_Singleton());
         if (savedInstance.ass6 == null)
@@ -50,10 +45,12 @@ public class Player : MonoBehaviour
     {
         if (inputs.canMove)
         {
+            /*
             if (activateAnimations)
             {
                 findSpriteDirection(); //when we have the art sprites to do so
             }
+            */
         }
 
         if (inputs.dir.x != 0 || inputs.dir.y != 0)
@@ -67,7 +64,7 @@ public class Player : MonoBehaviour
         }
 
     }
-
+    /*
     public void findSpriteDirection()
     {
         debugDir = inputs.dir;
@@ -116,6 +113,7 @@ public class Player : MonoBehaviour
         }
 
     }
+    */
 
     // Uses if we have currency system;
     public void gainCurrency()

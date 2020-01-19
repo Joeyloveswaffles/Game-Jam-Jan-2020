@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Forwar face back Animation
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationObject
+  animationSprites:
+  - {fileID: 21300000, guid: 18ca2d9a13733cf4895237d0c6bf7bf9, type: 3}
+  - {fileID: 21300000, guid: e85d972f613200d4da34debace59e439, type: 3}
+  - {fileID: 21300000, guid: a04d2157d90cce540998fe22045edae6, type: 3}
+  - {fileID: 21300000, guid: 21f072a5099ec164a8777ff2699258cc, type: 3}
+  - {fileID: 21300000, guid: fa1b8f188e2c4044eb233e98b7cf0f50, type: 3}
+  - {fileID: 21300000, guid: ee96948aa6c808140b1d4e659e469852, type: 3}
+  - {fileID: 21300000, guid: ee96948aa6c808140b1d4e659e469852, type: 3}
+  - {fileID: 21300000, guid: 6bc61aba3226e03419ef6a20f00dc63d, type: 3}
+  animationName: a
+  instanceId: a
