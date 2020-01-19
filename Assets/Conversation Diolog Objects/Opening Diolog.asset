@@ -15,3 +15,6 @@ MonoBehaviour:
   sentences:
   - 'Johnson, Bring in void Dweller #132.'
   - Ok.
+  speaker:
+  - adam
+  - Johnson

@@ -8,6 +8,7 @@ public class Diolog_Manager : MonoBehaviour
     public KeyCode nextdiologue;
     public GameObject diologueBox;
     public Text dialogeDisplay;
+    public Text speakerDisplay;
 
     public float textAnimateSpeed;
 
@@ -21,16 +22,19 @@ public class Diolog_Manager : MonoBehaviour
 
     public string currentrSentence;
     
+    
 
 
 
     public Conversation currentConversation; // custom scriptable object
     //public Help_Notification helpNotification; // script
-
     [Header("Debug")]
-    public Queue<string> queue; // queue array
+    [Header("Debug")]
+    public Queue<string> queue;
+    public Queue<string> authorQueue; // queue array
     public string[] sentences;
-    public string dialog;
+    public string[] authors;
+    
     public bool diolgueActive;
     public bool nextLetter;
 
@@ -50,8 +54,10 @@ public class Diolog_Manager : MonoBehaviour
         }
         //helpNotification = gameObject.transform.parent.GetComponentInChildren<Help_Notification>();
         queue = new Queue<string>(0);
+        authorQueue = new Queue<string>(0);
 
         sentences = currentConversation.sentences;
+        authors = currentConversation.speaker;
         diolgueActive = false;
 
         if (nextdiologue == KeyCode.None)
@@ -79,6 +85,11 @@ public class Diolog_Manager : MonoBehaviour
         foreach (string s in sentences)
         {
             queue.Enqueue(s);
+        }
+
+        foreach (string s in  authors)
+        {
+            authorQueue.Enqueue(s);
         }
 
         
@@ -144,6 +155,7 @@ public class Diolog_Manager : MonoBehaviour
 
     public IEnumerator displayNextSentence()
     {
+        speakerDisplay.text = authorQueue.Dequeue();
         dialogeDisplay.text = "";
         sentenceFinished = false;
         float seconds = textAnimateSpeed;
