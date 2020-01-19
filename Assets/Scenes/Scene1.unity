@@ -8895,11 +8895,9 @@ MonoBehaviour:
   velocityHor: 1
   velocityVer: 1
   dir: {x: 0, y: 0}
-  fallRate: 0
-  lowJumRate: 0
   isTriggered: 0
   canMove: 0
-  maxjumpHeight: 0
+  maxjumpHeight: 10
 --- !u!114 &804668350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8916,9 +8914,12 @@ MonoBehaviour:
   activateAnimations: 0
   render: {fileID: 0}
   directionAnimations: []
+  currentDirection: {x: 0, y: 0}
   debugDir: {x: 0, y: 0}
   alive: 0
+  moving: 0
   currency: 0
+  instanceDebug: ddds
 --- !u!212 &804668351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9296,6 +9297,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 577676783}
+    - target: {fileID: 4665727394478751245, guid: 03641beff456f3345b4333352bcf70fe,
+        type: 3}
+      propertyPath: ass
+      value: aaaa
+      objectReference: {fileID: 0}
     - target: {fileID: 4665727394319757020, guid: 03641beff456f3345b4333352bcf70fe,
         type: 3}
       propertyPath: m_Enabled

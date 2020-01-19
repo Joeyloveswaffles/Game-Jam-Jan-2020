@@ -78,6 +78,8 @@ public class Foot_Step_Manager : MonoBehaviour
 
                 source.clip = leftFootClipSound;
             }
+
+            source.panStereo = -0.5f;
             
 
         }
@@ -102,6 +104,8 @@ public class Foot_Step_Manager : MonoBehaviour
                 leftFootActivated = true;
                 source.clip = RightFootClipSound;
             }
+
+            source.panStereo = 0.5f;
             
 
         }

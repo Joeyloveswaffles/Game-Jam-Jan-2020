@@ -3,13 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class LevelChanger : Singleton<LevelChanger>
 {
+    private Player_Singleton instance;
     public Animator animator;
     public bool activate;
     private int levelToLoad;
+    public string ass;
+    public string ass1;
 
     void Start()
     {
+        instance = Player_Singleton.getInstance(new Player_Singleton());
+
+        
+        if (instance.ass6 == null)
+        {
+            instance.ass6 = ass;
+            Debug.LogError("asss");
+        }
+        else
+        {
+            ass1 = instance.ass6;
+        }
+        ass1 = instance.ass6;
         activate = true;
+        
     }
 
     // Update is called once per frame
@@ -21,6 +38,7 @@ public class LevelChanger : Singleton<LevelChanger>
             Debug.Log("Statement Failed");
             if (activate)
             {
+                LevelChanger.Instance.assSaveData = LevelChanger.Instance.GetInstanceID().ToString();
                 FadeToLevel(1);
             }
         }
