@@ -40,20 +40,25 @@ public class AI : MonoBehaviour
     void Update()
     {
         updateState();
+
+        if (persueTarget)
+        {
+            stopAndPersueTarget();
+        }
         
     }
     public void updateState()
     {
-        if (persueTarget)
+        if (persueTarget || state == State.Persueing)
         {
             moveTowardsTarget();
             state = State.Persueing;
         }
-        else if (attackingTarget)
+        else if (attackingTarget || state == State.Attacking)
         {
             state = State.Attacking;
         }
-        else if (patrol)
+        else if (patrol || state == State.Patrolling)
         {
             if (interupt)
             {
@@ -173,6 +178,15 @@ public class AI : MonoBehaviour
         interupt = false;
     }
 
+    public void stopAndPersueTarget()
+    {
+        state = State.Persueing;
+        StopAllCoroutines();
+        dir = new Vector2(0, 0);
+        transform.position = transform.position;
+
+    }
+
     
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -180,6 +194,7 @@ public class AI : MonoBehaviour
         if (collision.gameObject.name == target.name)
         {
             persueTarget = true;
+            stopAndPersueTarget();
         }
         else
         {
