@@ -41,7 +41,7 @@ public class Player_Input : MonoBehaviour
         this.dir = new Vector2(dirHorizontal * velocityHor, dirVertical * velocityVer);
 
 
-        Debug.Log("Moved");
+
         if (canMove)
         {
             body.MovePosition(position + dir);

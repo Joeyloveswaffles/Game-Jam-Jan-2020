@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
+    private Player_Singleton instance;
+    public enum ParentType
+    {
+        Player,Enemy,Object,None
+    }
+    public ParentType parentType;
     public Image greenHealthBar;
     public Image whiteHealthBar;
     public float maxHealth = 100;
@@ -18,17 +24,26 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        instance = Player_Singleton.getInstance(new Player_Singleton());
+
+
+        if (instance.currentHealth == null)
+        {
+            instance.currentHealth = currentHealth;
+            Debug.LogError("asss");
+        }
+        else
+        {
+            currentHealth = instance.currentHealth;
+        }
+        currentHealth = instance.currentHealth;
     }
     // Update is called once per frame
     void Update()
     {
         currentHealth = greenHealthBar.fillAmount * 100;
         currentFillPercent = greenHealthBar.fillAmount;
-        /*
-        if(whiteHealthBar.fillAmount <= greenHealthBar.fillAmount)
-        {
-            whiteHealthBar.fillAmount += .01f;
-        }*/
+        
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
             inVoid = true;
@@ -38,7 +53,7 @@ public class HealthBar : MonoBehaviour
             inVoid = false;
 
         }
-        if (inVoid == true)
+        if (inVoid == true && parentType == ParentType.Player)
         {
             StartCoroutine(depleteHealth());
         }
@@ -78,5 +93,22 @@ public class HealthBar : MonoBehaviour
             yield return new WaitForSeconds(3);
             whiteHealthBar.fillAmount -= 1.002375f / waitTime * time;
         }
+    }
+
+    public void recieveDamage(float damage)
+    {
+        currentHealth -= damage;
+       if ( currentHealth<= 0)
+        {
+            Destroy(gameObject.transform.parent);
+        }
+
+    }
+
+
+
+    private void OnDestroy()
+    {
+        Debug.LogWarning(gameObject.transform.parent.name + "was Destroyed");
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelChanger : Singleton<LevelChanger>
@@ -7,25 +8,10 @@ public class LevelChanger : Singleton<LevelChanger>
     public Animator animator;
     public bool activate;
     private int levelToLoad;
-    public string ass;
-    public string ass1;
 
     void Start()
     {
-        instance = Player_Singleton.getInstance(new Player_Singleton());
-
-        
-        if (instance.ass6 == null)
-        {
-            instance.ass6 = ass;
-            Debug.LogError("asss");
-        }
-        else
-        {
-            ass1 = instance.ass6;
-        }
-        ass1 = instance.ass6;
-        activate = true;
+        animator.SetTrigger("FadeIn");
         
     }
 
@@ -47,11 +33,26 @@ public class LevelChanger : Singleton<LevelChanger>
     public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
+        StartCoroutine(waitforFade());
         animator.SetTrigger("FadeOut");
+        Debug.Log("Fade");
+        
     }
+   
 
+    public IEnumerator waitforFade()
+    { 
+    yield return new WaitForSeconds(0.85f);
+    yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Fade_In") == true);
+       
+        OnFadeComplete();
+    }
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(levelToLoad);
+       SceneManager.LoadScene(levelToLoad);
+        Debug.Log("level Loaded");
+       
     }
+
+    
 }
