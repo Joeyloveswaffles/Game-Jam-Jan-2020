@@ -1,8 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Vault Test.unity
-=======
-- path: Assets/Scenes/Labratory.unity
->>>>>>> 995fd79999f49bb307ae03be7fd1836c0edff6d8
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
