@@ -83,6 +83,7 @@ public class Animation_Manager : MonoBehaviour
 
     public IEnumerator  determineNextAnimation()
     {
+
         check = false;
         if (animationType == AnimationType.Walking)
         {
@@ -90,7 +91,7 @@ public class Animation_Manager : MonoBehaviour
             {
                 yield return new WaitForSeconds(playerFootsteps.footstepSoundDelay / 4);
                 nextAnimation = true;
-                Debug.Log(playerFootsteps.footstepSoundDelay);
+               
               
             }
             else if (parent == ParentType.Enemy || parent == ParentType.NPC)
@@ -116,39 +117,13 @@ public class Animation_Manager : MonoBehaviour
         check = true;
 
     }
-
-    private void findLookDirection()
-    {
-        Player_Input input = gameObject.transform.parent.GetComponentInChildren<Player_Input>();
-        if (input.quad1)
-        {
-            gameObject.transform.parent.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if (input.quad2)
-        {
-            gameObject.transform.parent.rotation = Quaternion.Euler(0, 0, 0);
-
-        }
-        else if (input.quad3)
-        {
-            gameObject.transform.parent.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if (input.quad4)
-        {
-            gameObject.transform.parent.rotation = Quaternion.Euler(0, 0, 0);
-
-        }
-        else
-        {
-            
-        }
-    }
+   
 
     public IEnumerator startAnimation()
     {
         activateAnimation = false;
         animatiting = true;
-        Debug.Log("Animation Started");
+    
         foreach (Sprite sprite in forwatrdAnimation)
         {
             nextAnimation = false;
@@ -156,7 +131,9 @@ public class Animation_Manager : MonoBehaviour
             render.sprite = sprite;
             
             currentAnimation = render.sprite.name;
+            Debug.Log("nextAnimation Animiation wiaitng");
             yield return new WaitUntil(() => nextAnimation == true);
+            Debug.Log("nextAnimation Animiation transition");
         }
         check = false;
         animatiting = false;
@@ -166,6 +143,7 @@ public class Animation_Manager : MonoBehaviour
 
     public void changeAnimation()
     {
+        
         StopAllCoroutines();
         if (animationDataObject.name != liveObject.name)
         {
@@ -174,8 +152,26 @@ public class Animation_Manager : MonoBehaviour
 
         activateAnimation = true;
         animatiting = false;
+        
+    }
+    public void changeAnimation(AnimationObject newAnnimation)
+    {
+        if (animationDataObject != newAnnimation)
+        {
+            StopAllCoroutines();
+        }
+        animationDataObject = newAnnimation;
+        liveObject = newAnnimation;
+        forwatrdAnimation = newAnnimation.animationSprites;
+
+        StartCoroutine(startAnimation());
+        render.sprite = newAnnimation.animationSprites[0];
+
+
+        activateAnimation = true;
+        animatiting = false;
         Debug.LogWarning("Animation changed");
     }
 
-    
+
 }

@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public Player player;
     public Renderer spriteRender;
     public GameObject originParent;
+    public float damage;
     [Header("Debug")]
     public Vector2 vectorDir;
     public float velocity;
@@ -52,12 +53,20 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.SendMessage("recieveDamage", this.damage);
+        }
         collisionInfoName = collision.name;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         collisionInfoName = "";
+    }
+
+    private void OnDestroy()
+    {
+        Debug.LogWarning(gameObject.name + "has been destroyed");
     }
 }

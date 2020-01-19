@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Player_Input : MonoBehaviour
 {
-    
 
+    public Game_Controller gameController;
+    public LayerMask layerMask;
     //public Inventory playerInventory;
 
     public Rigidbody2D body;
     public float velocityHor;
     public float velocityVer;
+
+    
 
     [Header("Debug: DO NOT SET")]
    
@@ -24,6 +27,8 @@ public class Player_Input : MonoBehaviour
     public bool quad4;
     public float mouseX;
     public float mouseY;
+    public float centerX;
+    public float centerY;
 
 
 
@@ -62,6 +67,8 @@ public class Player_Input : MonoBehaviour
             //body.velocity += Vector2.up * Physics2D.gravity * (lowJumRate - 1) * Time.deltaTime;
         }
 
+        findClickQuad();
+
     }
 
     public void dataValidation()
@@ -84,10 +91,50 @@ public class Player_Input : MonoBehaviour
 
     public void findClickQuad()
     {
-         mouseX = Input.mousePosition.x;
-        mouseY = Input.mousePosition.y;
+        mouseX = gameController.mouseX;
+        mouseY = gameController.mouseY;
+        centerX = gameController.CenterX;
+        centerY = gameController.CenterY;
 
-        
+
+        if (mouseX <= gameController.CenterX && mouseY <= gameController.CenterY)
+        {
+            quad1 = false;
+            quad2 = false;
+            quad3 = true;
+            quad4 = false;
+
+        }
+       else if (mouseX <= gameController.CenterX && mouseY > gameController.CenterY)
+        {
+            quad1 = true;
+            quad2 = false;
+            quad3 = false;
+            quad4 = false;
+
+        }
+       else if (mouseX > gameController.CenterX && mouseY <= gameController.CenterY)
+        {
+            quad1 = false;
+            quad2 = false;
+            quad3 = false;
+            quad4 = true;
+
+        }
+        else if (mouseX > gameController.CenterX && mouseY > gameController.CenterY)
+        {
+            quad1 = false;
+            quad2 = true;
+            quad3 = false;
+            quad4 = false;
+
+        }
+        else
+        {
+            Debug.LogError("Quad System is failing");
+        }
+
+
     }
 
 
@@ -100,7 +147,12 @@ public class Player_Input : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isTriggered = true;
+        if (collision.gameObject.layer == layerMask.value)
+
+            if (collision.gameObject.name != gameObject.name)
+            {
+                isTriggered = true;
+            }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

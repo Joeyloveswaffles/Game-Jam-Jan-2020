@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1350527111285016326}
   - component: {fileID: 1350527111285016327}
-  - component: {fileID: 1350527111285016324}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -63,18 +62,6 @@ MonoBehaviour:
   interupt: 0
   objectInRange: 
   state: 1
---- !u!114 &1350527111285016324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350527111285016320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5acd6ae243027be4aa6a9f355a1dbf54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4997723565078023283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,11 +69,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1350527111285016326}
     m_Modifications:
-    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 8684155703682746515, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}

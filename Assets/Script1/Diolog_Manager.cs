@@ -123,7 +123,8 @@ public class Diolog_Manager : MonoBehaviour
         {
             if (queue.Count <= 0)
             {
-                disableDiologueBox();
+                
+                sentenceFinished = true;
 
             }
             else if (sentenceFinished == false)
