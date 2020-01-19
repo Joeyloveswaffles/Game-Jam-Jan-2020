@@ -100885,6 +100885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892983669}
   - component: {fileID: 892983668}
+  - component: {fileID: 892983670}
   m_Layer: 0
   m_Name: Void Rift
   m_TagString: Untagged
@@ -100954,6 +100955,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892983670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892983667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82dceeedc1c442e4aaa6a84164b46957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &901497434
 GameObject:
   m_ObjectHideFlags: 0
@@ -101515,6 +101528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168746546}
   - component: {fileID: 1168746545}
+  - component: {fileID: 1168746547}
   m_Layer: 0
   m_Name: Void Rift (2)
   m_TagString: Untagged
@@ -101584,6 +101598,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1168746547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168746544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82dceeedc1c442e4aaa6a84164b46957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1174938871
 GameObject:
   m_ObjectHideFlags: 0
@@ -105415,6 +105441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715800862}
   - component: {fileID: 1715800861}
+  - component: {fileID: 1715800863}
   m_Layer: 0
   m_Name: Void Rift (3)
   m_TagString: Untagged
@@ -105484,6 +105511,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715800863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715800860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82dceeedc1c442e4aaa6a84164b46957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1727602298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105887,6 +105926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1837359563}
   - component: {fileID: 1837359562}
+  - component: {fileID: 1837359564}
   m_Layer: 0
   m_Name: Void Rift (1)
   m_TagString: Untagged
@@ -105956,6 +105996,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1837359564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837359561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82dceeedc1c442e4aaa6a84164b46957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1853466359
 GameObject:
   m_ObjectHideFlags: 0
