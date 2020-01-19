@@ -6,15 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
-<<<<<<< HEAD
     private Player_Singleton instance;
-=======
     public enum ParentType
     {
         Player,Enemy,Object,None
     }
     public ParentType parentType;
->>>>>>> b429cc8b3827a070c348911dca710a4b3bc40392
     public Image greenHealthBar;
     public Image whiteHealthBar;
     public float maxHealth = 100;

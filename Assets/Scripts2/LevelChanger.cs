@@ -7,8 +7,6 @@ public class LevelChanger : Singleton<LevelChanger>
     public Animator animator;
     public bool activate;
     private int levelToLoad;
-    public string ass;
-    public string ass1;
 
     void Start()
     {
@@ -35,10 +33,16 @@ public class LevelChanger : Singleton<LevelChanger>
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
+        // SceneManager.LoadScene(levelToLoad);
+        animator.GetCurrentAnimatorStateInfo(0).IsName("Fade_In");
     }
-
+   
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(levelToLoad);
+       SceneManager.LoadScene(levelToLoad);
+        Debug.Log("level Loaded");
+       
     }
+
+    
 }
