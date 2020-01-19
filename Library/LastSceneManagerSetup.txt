@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Void Test.unity
+=======
+- path: Assets/Scenes/The Void 2.unity
+>>>>>>> ade31c1b0e01d90833d5b86301f1d0f6b9e91c60
   isLoaded: 1
   isActive: 1
