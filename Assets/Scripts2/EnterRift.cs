@@ -9,6 +9,7 @@ public class EnterRift : MonoBehaviour
     public int debug;
     public bool riftPresent;
     public int riftLevelIndex;
+    public int voidLevelIndex;
     public bool playerWithinRange;
 
     private void Start()
@@ -22,7 +23,7 @@ public class EnterRift : MonoBehaviour
         findRift();
         if (Input.GetButtonDown("Interact") && playerWithinRange)
         {
-            if (getCurrentLevelIndex() == 0)
+            if (getCurrentLevelIndex() == voidLevelIndex)
             {
                 Debug.Log("changing scenes");
                 levelChanger.FadeToLevel(riftLevelIndex);
@@ -31,7 +32,7 @@ public class EnterRift : MonoBehaviour
             else
             {
                 Debug.Log("changing scenes");
-                levelChanger.FadeToLevel(0);
+                levelChanger.FadeToLevel(voidLevelIndex);
             }
         }
     }
