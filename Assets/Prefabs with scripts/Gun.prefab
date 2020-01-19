@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4161647558996715246}
   - component: {fileID: 3911589954914683742}
+  - component: {fileID: 4359837374765051993}
   - component: {fileID: 82777149967956916}
   m_Layer: 0
   m_Name: Gun
@@ -48,7 +49,10 @@ MonoBehaviour:
   maxAmmo: 40
   clipSize: 10
   currentAmmo: 10
+  shootIsCalled: 0
+  reloadIsCalled: 0
   shootControl: 108
+  reloadControl: 0
   bulletSpawn: {fileID: 4161647558996715246}
   bulletPrefab: {fileID: 4623153606439624215, guid: c2868606aa6220f4781efb61fae7b38d,
     type: 3}
@@ -56,6 +60,30 @@ MonoBehaviour:
   firesound: {fileID: 8300000, guid: f616fbd65c27ab342a0b40faad8303d5, type: 3}
   reloadSound: {fileID: 8300000, guid: 32797570c68e7164d879cfd854ab3825, type: 3}
   canShoot: 0
+--- !u!114 &4359837374765051993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285547215321158539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9a60c5165f9c146b7f560b0a8b3901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistol: {fileID: 0}
+  fingerGun: {fileID: 0}
+  backwardsGun: {fileID: 0}
+  plasmaLaser: {fileID: 0}
+  currentGun: {fileID: 0}
+  gun: {fileID: 0}
+  guns: []
+  manualBinding: 0
+  currentAmmo: 0
+  clipSize: 0
+  maxAmmo: 0
+  currentIndex: 0
 --- !u!82 &82777149967956916
 AudioSource:
   m_ObjectHideFlags: 0
