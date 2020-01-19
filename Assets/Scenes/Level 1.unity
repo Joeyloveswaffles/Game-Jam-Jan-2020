@@ -535,6 +535,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2280240496431388228, guid: 47debfe881e32a141979862695b1399e,
+        type: 3}
+      propertyPath: playerFootsteps
+      value: 
+      objectReference: {fileID: 1919794495}
+    - target: {fileID: 2280240496431388228, guid: 47debfe881e32a141979862695b1399e,
+        type: 3}
+      propertyPath: ai
+      value: 
+      objectReference: {fileID: 336115299}
     - target: {fileID: 4505673897944041981, guid: 47debfe881e32a141979862695b1399e,
         type: 3}
       propertyPath: source
@@ -555,16 +565,6 @@ PrefabInstance:
       propertyPath: fireRate
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2280240496431388228, guid: 47debfe881e32a141979862695b1399e,
-        type: 3}
-      propertyPath: playerFootsteps
-      value: 
-      objectReference: {fileID: 1919794495}
-    - target: {fileID: 2280240496431388228, guid: 47debfe881e32a141979862695b1399e,
-        type: 3}
-      propertyPath: ai
-      value: 
-      objectReference: {fileID: 336115299}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47debfe881e32a141979862695b1399e, type: 3}
 --- !u!1 &1603651215
@@ -665,6 +665,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33334553, y: 0.32052493}
   m_EdgeRadius: 0
+--- !u!95 &1919794493
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919794491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1f4ceb02fd725d4e8c9ca8d9d0a70f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1919794494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919794491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7fd5586d0d66649ba29e41f4cf1130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstLevelBuildIndex: 0
 --- !u!114 &1919794495 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6362669125523853491, guid: 47debfe881e32a141979862695b1399e,
