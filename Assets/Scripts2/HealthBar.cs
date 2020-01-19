@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
-    private Player_Singleton instance;
+    
     public enum ParentType
     {
         Player,Enemy,Object,None
@@ -14,35 +14,35 @@ public class HealthBar : MonoBehaviour
     public ParentType parentType;
     public Image greenHealthBar;
     public Image whiteHealthBar;
-    public float maxHealth = 100;
+    public float maxHealth;
     public float currentHealth;
     public bool coolingDown;
-    public float waitTime = 420.0f;
+    public float waitTime;
     public float currentFillPercent;
     public bool inVoid;
 
     private void Start()
     {
-        currentHealth = maxHealth;
-        instance = Player_Singleton.getInstance(new Player_Singleton());
+        if (currentHealth <= 0)
+        {
+            currentHealth = maxHealth;
+           
+        }
+
+        maxHealth = 100;
+        waitTime = 420.0f;
 
 
-        if (instance.currentHealth == null)
-        {
-            instance.currentHealth = currentHealth;
-            Debug.LogError("asss");
-        }
-        else
-        {
-            currentHealth = instance.currentHealth;
-        }
-        currentHealth = instance.currentHealth;
+
+
+
     }
     // Update is called once per frame
     void Update()
     {
-        currentHealth = greenHealthBar.fillAmount * 100;
-        currentFillPercent = greenHealthBar.fillAmount;
+
+        currentFillPercent = currentHealth / maxHealth;
+        greenHealthBar.fillAmount = currentFillPercent;
         
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {

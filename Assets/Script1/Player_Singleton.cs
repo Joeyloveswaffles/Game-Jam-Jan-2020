@@ -5,9 +5,11 @@ using UnityEngine;
 public class Player_Singleton
 {
     private  static Player_Singleton instance;
-
+    public HealthBar healthBar;
+    public Gun gun;
     public string ass6;
     public float currentHealth;
+    
 
     
 
@@ -17,6 +19,7 @@ public class Player_Singleton
         {
             instance = myObject;
             return instance;
+            
         }
         else
         {
@@ -24,6 +27,8 @@ public class Player_Singleton
         }
 
         return null;
+
+        
 
     }
 
