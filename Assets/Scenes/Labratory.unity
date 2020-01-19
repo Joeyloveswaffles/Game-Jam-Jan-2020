@@ -316,6 +316,11 @@ PrefabInstance:
       propertyPath: fireRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5039254224209492148, guid: 47debfe881e32a141979862695b1399e,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47debfe881e32a141979862695b1399e, type: 3}
 --- !u!1 &876912069 stripped
