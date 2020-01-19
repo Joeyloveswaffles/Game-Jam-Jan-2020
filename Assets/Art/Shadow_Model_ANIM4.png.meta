@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 14935ee5a508c3e469281abd8d931462
+=======
 guid: fa1b8f188e2c4044eb233e98b7cf0f50
+>>>>>>> GetBackScene
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
+    spriteID: e86a91f54a1fdee488beb31d22b22055
+=======
     spriteID: 8f5412b54ce1e454a9d09f5133f92ec1
+>>>>>>> GetBackScene
     vertices: []
     indices: 
     edges: []
