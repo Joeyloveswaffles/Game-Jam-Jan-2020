@@ -70,14 +70,11 @@
      <Compile Include="Assets\Script1\Player.cs" />
      <Compile Include="Assets\Script1\Player_Input.cs" />
      <Compile Include="Assets\Script1\Player_Singleton.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Script1\Rift_Animate.cs" />
-=======
      <Compile Include="Assets\Scripts2\ChangeGun.cs" />
      <Compile Include="Assets\Scripts2\CutSceneEnd.cs" />
      <Compile Include="Assets\Scripts2\Death.cs" />
      <Compile Include="Assets\Scripts2\DialogueInteraction.cs" />
->>>>>>> 45ff8ed8d5b1412d0bf64c33d5abe04a8fa36f73
      <Compile Include="Assets\Scripts2\EnterRift.cs" />
      <Compile Include="Assets\Scripts2\GunBehaviour.cs" />
      <Compile Include="Assets\Scripts2\GunUIDisplay.cs" />
