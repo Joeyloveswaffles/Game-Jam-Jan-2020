@@ -123,16 +123,11 @@ public class Diolog_Manager : MonoBehaviour
         {
             if (queue.Count <= 0 && sentenceFinished == false)
             {
-                
-<<<<<<< HEAD
                 StopAllCoroutines();
                 source.Stop();
                 sentenceFinished = true;
                 dialogeDisplay.text = currentrSentence;
-=======
                 sentenceFinished = true;
->>>>>>> 6d8a86627f5c574d79450be6ac6e27e4390f62ba
-
             }
             else if (sentenceFinished == false)
             {
