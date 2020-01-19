@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelChanger : Singleton<LevelChanger>
@@ -10,7 +11,7 @@ public class LevelChanger : Singleton<LevelChanger>
 
     void Start()
     {
-        
+        animator.SetTrigger("FadeIn");
         
     }
 
@@ -32,11 +33,20 @@ public class LevelChanger : Singleton<LevelChanger>
     public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
+        StartCoroutine(waitforFade());
         animator.SetTrigger("FadeOut");
-        // SceneManager.LoadScene(levelToLoad);
-        animator.GetCurrentAnimatorStateInfo(0).IsName("Fade_In");
+        Debug.Log("Fade");
+        
     }
    
+
+    public IEnumerator waitforFade()
+    { 
+    yield return new WaitForSeconds(0.85f);
+    yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Fade_In") == true);
+       
+        OnFadeComplete();
+    }
     public void OnFadeComplete()
     {
        SceneManager.LoadScene(levelToLoad);
