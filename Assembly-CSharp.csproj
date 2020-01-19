@@ -67,6 +67,7 @@
      <Compile Include="Assets\Script1\Foot_Step_Manager.cs" />
      <Compile Include="Assets\Script1\Game_Manager.cs" />
      <Compile Include="Assets\Script1\Gun.cs" />
+     <Compile Include="Assets\Script1\Music_Autoplay.cs" />
      <Compile Include="Assets\Script1\Player.cs" />
      <Compile Include="Assets\Script1\Player_Input.cs" />
      <Compile Include="Assets\Script1\Player_Singleton.cs" />
