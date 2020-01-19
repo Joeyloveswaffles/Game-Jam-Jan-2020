@@ -1,4 +1,9 @@
 sceneSetups:
 - path: Assets/Scenes/The Void 1.unity
+<<<<<<< HEAD
   isLoaded: 0
   isActive: 0
+=======
+  isLoaded: 1
+  isActive: 1
+>>>>>>> d95730794bb1b4a8ce06953f5686bec5f3c9600f
