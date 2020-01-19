@@ -182,8 +182,6 @@ MonoBehaviour:
   velocityHor: 0.1
   velocityVer: 0.1
   dir: {x: 0, y: 0}
-  fallRate: 0
-  lowJumRate: 0
   isTriggered: 0
   canMove: 1
   maxjumpHeight: 0
@@ -206,6 +204,7 @@ MonoBehaviour:
   currentDirection: {x: 0.0042458996, y: 0.0042458996}
   debugDir: {x: 0, y: 0}
   alive: 0
+  moving: 0
   currency: 0
 --- !u!114 &6362669125523853491
 MonoBehaviour:
@@ -214,17 +213,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5485327080243840476}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9c441e6af3c2da42b60cf6580f26559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 6193712724849311982}
-  leftFootClipSound: {fileID: 0}
-  RightFootClipSound: {fileID: 0}
-  footstepSoundDelay: 1
+  leftFootClipSound: {fileID: 8300000, guid: 938bdc977745cbd4cbe5fee1f3328bd3, type: 3}
+  RightFootClipSound: {fileID: 8300000, guid: 938bdc977745cbd4cbe5fee1f3328bd3, type: 3}
+  leftFootInVoidClipSound: {fileID: 8300000, guid: ce14b3da5c9093f4e838eba2c8a757b6,
+    type: 3}
+  RightFootInVoidClipSound: {fileID: 8300000, guid: ce14b3da5c9093f4e838eba2c8a757b6,
+    type: 3}
+  footstepSoundDelay: 0.75
+  activateSound: 0
   leftFootActivated: 0
-  rightFootAactivated: 0
+  rightFootActivated: 0
+  leftFootActivatedInVoid: 0
+  rightFootActivatedinVoid: 0
+  inVoid: 0
 --- !u!50 &5039254224209492148
 Rigidbody2D:
   serializedVersion: 4
@@ -451,11 +458,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5df4a8fe6c01e46a4a33153772d859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 0
   maxAmmo: 40
   clipSize: 10
   currentAmmo: 5
   shootControl: 108
+  reloadControl: 0
   bulletSpawn: {fileID: 3534965862161687629}
   bulletPrefab: {fileID: 4623153606439624215, guid: c2868606aa6220f4781efb61fae7b38d,
     type: 3}
+  source: {fileID: 0}
+  firesound: {fileID: 0}
+  reloadSound: {fileID: 0}
   canShoot: 0
