@@ -1,8 +1,12 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Scenes/Level 1.unity
 =======
 - path: Assets/Scenes/The Void 1.unity
 >>>>>>> a393081a9ab047e6634778cf66c09f3f6f8037da
+=======
+- path: Assets/Scenes/Scene1.unity
+>>>>>>> c1606a10c7577c7f26f90291035c84218828d652
   isLoaded: 1
   isActive: 1

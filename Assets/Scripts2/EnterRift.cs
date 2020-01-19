@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EnterRift : MonoBehaviour
 {
+    public LevelChanger levelChanger;
+    public int debug;
     public bool riftPresent;
     public int riftLevelIndex;
     public bool playerWithinRange;
@@ -16,19 +18,20 @@ public class EnterRift : MonoBehaviour
 
     private void Update()
     {
+        debug = getCurrentLevelIndex();
         findRift();
         if (Input.GetButtonDown("Interact") && playerWithinRange)
         {
             if (getCurrentLevelIndex() == 0)
             {
                 Debug.Log("changing scenes");
-                LevelChanger.Instance.FadeToLevel(riftLevelIndex);
+                levelChanger.FadeToLevel(riftLevelIndex);
 
             }
             else
             {
                 Debug.Log("changing scenes");
-                LevelChanger.Instance.FadeToLevel(0);
+                levelChanger.FadeToLevel(0);
             }
         }
     }

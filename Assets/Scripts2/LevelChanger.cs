@@ -7,25 +7,10 @@ public class LevelChanger : Singleton<LevelChanger>
     public Animator animator;
     public bool activate;
     private int levelToLoad;
-    public string ass;
-    public string ass1;
 
     void Start()
     {
-        instance = Player_Singleton.getInstance(new Player_Singleton());
-
         
-        if (instance.ass6 == null)
-        {
-            instance.ass6 = ass;
-            Debug.LogError("asss");
-        }
-        else
-        {
-            ass1 = instance.ass6;
-        }
-        ass1 = instance.ass6;
-        activate = true;
         
     }
 
@@ -48,10 +33,16 @@ public class LevelChanger : Singleton<LevelChanger>
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
+        // SceneManager.LoadScene(levelToLoad);
+        animator.GetCurrentAnimatorStateInfo(0).IsName("Fade_In");
     }
-
+   
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(levelToLoad);
+       SceneManager.LoadScene(levelToLoad);
+        Debug.Log("level Loaded");
+       
     }
+
+    
 }

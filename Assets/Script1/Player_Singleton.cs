@@ -7,6 +7,7 @@ public class Player_Singleton
     private  static Player_Singleton instance;
 
     public string ass6;
+    public float currentHealth;
 
     
 
