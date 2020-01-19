@@ -25,6 +25,7 @@ public class AI : MonoBehaviour
     public bool attackingTarget;
     public bool patrol;
     public bool startNewPath;
+    public bool interupt;
     public string objectInRange;
     public State state;
     // Start is called before the first frame update
@@ -39,21 +40,32 @@ public class AI : MonoBehaviour
     void Update()
     {
         updateState();
+
+        if (persueTarget)
+        {
+            stopAndPersueTarget();
+        }
         
     }
     public void updateState()
     {
-        if (persueTarget)
+        if (persueTarget || state == State.Persueing)
         {
             moveTowardsTarget();
             state = State.Persueing;
         }
-        else if (attackingTarget)
+        else if (attackingTarget || state == State.Attacking)
         {
             state = State.Attacking;
         }
-        else if (patrol)
+        else if (patrol || state == State.Patrolling)
         {
+            if (interupt)
+            {
+                StopAllCoroutines();
+                dir = new Vector2(0, 0);
+                gameObject.transform.position = transform.position;
+            }
             if (startNewPath)
             {
                 startPatrol();
@@ -61,7 +73,10 @@ public class AI : MonoBehaviour
             }
             else
             {
-                moveTowardsPathFindingTarget();
+                if (interupt == false)
+                {
+                    moveTowardsPathFindingTarget();
+                }
             }
         
 
@@ -74,7 +89,7 @@ public class AI : MonoBehaviour
         }
 
     }
-
+    // only if its persuing 
     public void moveTowardsTarget()
     {
         Vector3 dir = target.transform.position - gameObject.transform.position;
@@ -84,6 +99,7 @@ public class AI : MonoBehaviour
         gameObject.transform.position += dir;
 
     }
+    // only if it is patrolling
     public void moveTowardsPathFindingTarget()
     {
         this.points = points;
@@ -134,6 +150,8 @@ public class AI : MonoBehaviour
 
         }
 
+        // returns to origin
+
         Transform point1 = points[0];
         pathFindingTarget = point1.gameObject;
         currentTargetName = points[0].name;
@@ -150,6 +168,25 @@ public class AI : MonoBehaviour
 
     }
 
+    public void interuptPath()
+    {
+        interupt = true;
+    }
+
+    public void resumePath()
+    {
+        interupt = false;
+    }
+
+    public void stopAndPersueTarget()
+    {
+        state = State.Persueing;
+        StopAllCoroutines();
+        dir = new Vector2(0, 0);
+        transform.position = transform.position;
+
+    }
+
     
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -157,6 +194,7 @@ public class AI : MonoBehaviour
         if (collision.gameObject.name == target.name)
         {
             persueTarget = true;
+            stopAndPersueTarget();
         }
         else
         {

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Conversation : ScriptableObject
 {
     public string[] sentences;
+    public string[] speaker;
     // Start is called before the first frame update
     void Start()
     {

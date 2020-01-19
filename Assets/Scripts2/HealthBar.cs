@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
+<<<<<<< HEAD
     private Player_Singleton instance;
+=======
+    public enum ParentType
+    {
+        Player,Enemy,Object,None
+    }
+    public ParentType parentType;
+>>>>>>> b429cc8b3827a070c348911dca710a4b3bc40392
     public Image greenHealthBar;
     public Image whiteHealthBar;
     public float maxHealth = 100;
@@ -38,11 +46,7 @@ public class HealthBar : MonoBehaviour
     {
         currentHealth = greenHealthBar.fillAmount * 100;
         currentFillPercent = greenHealthBar.fillAmount;
-        /*
-        if(whiteHealthBar.fillAmount <= greenHealthBar.fillAmount)
-        {
-            whiteHealthBar.fillAmount += .01f;
-        }*/
+        
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
             inVoid = true;
@@ -52,7 +56,7 @@ public class HealthBar : MonoBehaviour
             inVoid = false;
 
         }
-        if (inVoid == true)
+        if (inVoid == true && parentType == ParentType.Player)
         {
             StartCoroutine(depleteHealth());
         }
@@ -92,5 +96,22 @@ public class HealthBar : MonoBehaviour
             yield return new WaitForSeconds(3);
             whiteHealthBar.fillAmount -= 1.002375f / waitTime * time;
         }
+    }
+
+    public void recieveDamage(float damage)
+    {
+        currentHealth -= damage;
+       if ( currentHealth<= 0)
+        {
+            Destroy(gameObject.transform.parent);
+        }
+
+    }
+
+
+
+    private void OnDestroy()
+    {
+        Debug.LogWarning(gameObject.transform.parent.name + "was Destroyed");
     }
 }
