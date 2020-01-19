@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4161647558996715246}
   - component: {fileID: 3911589954914683742}
   - component: {fileID: 82777149967956916}
+  - component: {fileID: 5843942609968592218}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -48,7 +49,10 @@ MonoBehaviour:
   maxAmmo: 40
   clipSize: 10
   currentAmmo: 10
+  shootIsCalled: 0
+  reloadIsCalled: 0
   shootControl: 108
+  reloadControl: 0
   bulletSpawn: {fileID: 4161647558996715246}
   bulletPrefab: {fileID: 4623153606439624215, guid: c2868606aa6220f4781efb61fae7b38d,
     type: 3}
@@ -152,3 +156,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5843942609968592218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285547215321158539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241c108bd8ab1e04496bfe78e2ef491f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

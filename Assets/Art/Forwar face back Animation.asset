@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Forwar face back Animation
   m_EditorClassIdentifier: Assembly-CSharp::AnimationObject
   animationSprites:
-  - {fileID: 21300000, guid: 18ca2d9a13733cf4895237d0c6bf7bf9, type: 3}
-  - {fileID: 21300000, guid: e85d972f613200d4da34debace59e439, type: 3}
-  - {fileID: 21300000, guid: a04d2157d90cce540998fe22045edae6, type: 3}
-  - {fileID: 21300000, guid: 21f072a5099ec164a8777ff2699258cc, type: 3}
-  - {fileID: 21300000, guid: fa1b8f188e2c4044eb233e98b7cf0f50, type: 3}
-  - {fileID: 21300000, guid: ee96948aa6c808140b1d4e659e469852, type: 3}
-  - {fileID: 21300000, guid: ee96948aa6c808140b1d4e659e469852, type: 3}
-  - {fileID: 21300000, guid: 6bc61aba3226e03419ef6a20f00dc63d, type: 3}
+  - {fileID: 21300000, guid: 96024d19375833d43b903b2deed88812, type: 3}
+  - {fileID: 21300000, guid: 5d144b2f40be8b641a1c8416d64da819, type: 3}
+  - {fileID: 21300000, guid: f33f3d2e13d441b4aa468d81d2e1f064, type: 3}
+  - {fileID: 21300000, guid: 0a3dabb9fa0f1a8438da62acdf1cd4b7, type: 3}
+  - {fileID: 21300000, guid: 428bed8daefa0eb459f17fa40f835af4, type: 3}
+  - {fileID: 21300000, guid: 64547716b00faa4478182df85dcdf71b, type: 3}
+  - {fileID: 21300000, guid: b6b77b4a65557c943b1d968e442d0044, type: 3}
+  - {fileID: 21300000, guid: 772ff50ab24aa6742b1fae5836f07ff1, type: 3}
   animationName: a
   instanceId: a

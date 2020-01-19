@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3402461704899650147}
   - component: {fileID: 2280240496431388228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Animation Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,11 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cdd073eb9713e3438e79f3a4c7dc53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerFootsteps: {fileID: 0}
+  ai: {fileID: 0}
   activateAnimation: 0
   nextAnimation: 0
   render: {fileID: 3687637662771605990}
   animationDataObject: {fileID: 11400000, guid: ada05484f0152914494143ec044c740f,
     type: 2}
+  parent: 0
+  check: 0
+  currentAnimation: 
+  animationType: 0
+  animatiting: 0
   liveObject: {fileID: 0}
   forwatrdAnimation: []
 --- !u!1 &4116526330213640702
@@ -60,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4153718893028653910}
   - component: {fileID: 6193712724849311982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,9 +198,9 @@ GameObject:
   - component: {fileID: 6362669125523853491}
   - component: {fileID: 5039254224209492148}
   - component: {fileID: 634898554975845384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,12 +236,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05127cfd9f608d43a8d4727cd10c74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   body: {fileID: 5039254224209492148}
   velocityHor: 0.1
   velocityVer: 0.1
   dir: {x: 0, y: 0}
   isTriggered: 0
   canMove: 1
+  quad1: 0
+  quad2: 0
+  quad3: 0
+  quad4: 0
+  mouseX: 0
+  mouseY: 0
   maxjumpHeight: 0
 --- !u!114 &3049431998707883809
 MonoBehaviour:
@@ -338,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 975176884571123457}
   - component: {fileID: 3687637662771605990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2566043299536700231}
   - component: {fileID: 4635066418858619452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger collidder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3534965862161687629}
   - component: {fileID: 4505673897944041981}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,6 +528,8 @@ MonoBehaviour:
   maxAmmo: 40
   clipSize: 10
   currentAmmo: 5
+  shootIsCalled: 0
+  reloadIsCalled: 0
   shootControl: 108
   reloadControl: 0
   bulletSpawn: {fileID: 3534965862161687629}
