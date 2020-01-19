@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 110
+  controlID: 12
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 0
     width: 311
     height: 731
-  m_MinSize: {x: 277, y: 74}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 50
+  controlID: 51
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 51
+  controlID: 52
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,20 +336,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs2
+    - Assets/Scenes/Final Game Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs2
+  - Assets/Scenes/Final Game Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Unity\Game Jam January 2020
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 112}
-    m_SelectedIDs: 982b0000
-    m_LastClickedID: 11160
-    m_ExpandedIDs: 000000008a2600001e270000ec270000122a000000ca9a3b
+    scrollPos: {x: 0, y: 232}
+    m_SelectedIDs: 340b0000
+    m_LastClickedID: 2868
+    m_ExpandedIDs: 00000000dc090000740a0000420b0000680d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -377,7 +377,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008a2600001e270000122a0000
+    m_ExpandedIDs: 00000000dc090000740a0000420b0000680d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,23 +496,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: e2bdffffc8c3ffffa0daffffe0daffff20dbffff60dbffffa0dbffffa0ddffffe0ddffff20deffff60deffffa0defffff8dfffff78e0ffffb8e0ffff6ce1ffffe6e7ffff24e8ffff1aeeffff28f1ffff72f1ffffaef2ffff04f3ffff58f3ffff76f5ffff66f8ffff64fbffffccfbffffdc3b0000ec3c0000
+      m_SelectedIDs: f4f9fffffaf9fffff2f9ffff
+      m_LastClickedID: -1550
+      m_ExpandedIDs: 9cfaffff20fbffff3afbffffd6fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Sprite
-        m_OriginalName: Sprite
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -4604
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -554,9 +554,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.5092576, y: 2.5873034, z: 2.8515625}
+    m_Target: {x: -0.4377395, y: 0.6494775, z: 3.0290866}
     speed: 2
-    m_Value: {x: 2.5092576, y: 2.5873034, z: 2.8515625}
+    m_Value: {x: -0.4377395, y: 0.6494775, z: 3.0290866}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -588,9 +588,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 34.963474
+    m_Target: 17.034937
     speed: 2
-    m_Value: 34.963474
+    m_Value: 17.034937
   m_Ortho:
     m_Target: 1
     speed: 2
