@@ -19,8 +19,10 @@ public class Player : MonoBehaviour
 
 
     [Header("Debug")]
+    public Vector2 currentDirection;
     public Vector2 debugDir;
     public bool alive;
+    public bool moving;
     public int currency;
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,16 @@ public class Player : MonoBehaviour
             {
                 findSpriteDirection(); //when we have the art sprites to do so
             }
+        }
+
+        if (inputs.dir.x != 0 || inputs.dir.y != 0)
+        {
+            currentDirection = inputs.dir;
+            moving = true;
+        }
+        else
+        {
+            moving = false;
         }
 
     }
