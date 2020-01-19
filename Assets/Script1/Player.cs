@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Player_Input inputs;
     private Player_Singleton savedInstance;
+    public HealthBar healthBar;
 
     
 
@@ -119,5 +120,23 @@ public class Player : MonoBehaviour
     public void gainCurrency()
     {
         currency += 1;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag =="Enemy")
+        {
+            healthBar.recieveDamage(collision.gameObject.GetComponentInChildren<Enemy>().damage);
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        
+    }
+
+    private void OnDestroy()
+    {
+        Debug.LogWarning("Player Died");
     }
 }

@@ -48,7 +48,7 @@ public class Diolog_Manager : MonoBehaviour
     void Start()
     {
         nextLetter = true;
-        if (textAnimateSpeed <= 0f)
+        if (textAnimateSpeed < 0f)
         {
             textAnimateSpeed = 0.3f;
         }
@@ -121,10 +121,13 @@ public class Diolog_Manager : MonoBehaviour
     {
         if (Input.GetKeyDown(nextdiologue))
         {
-            if (queue.Count <= 0)
+            if (queue.Count <= 0 && sentenceFinished == false)
             {
-                disableDiologueBox();
-
+                StopAllCoroutines();
+                source.Stop();
+                sentenceFinished = true;
+                dialogeDisplay.text = currentrSentence;
+                sentenceFinished = true;
             }
             else if (sentenceFinished == false)
             {
@@ -135,6 +138,10 @@ public class Diolog_Manager : MonoBehaviour
 
                 dialogeDisplay.text = currentrSentence;
 
+            }
+            else if (queue.Count == 0 && sentenceFinished == true)
+            {
+                disableDiologueBox();
             }
             else
             {

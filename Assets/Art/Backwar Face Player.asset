@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Backwar Face Player
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationObject
+  animationSprites:
+  - {fileID: 21300000, guid: 1b29a1c8e2e135248ae687452cb562ba, type: 3}
+  - {fileID: 21300000, guid: 9d910ae09c2b1384086b64dbf62c850f, type: 3}
+  - {fileID: 21300000, guid: 75c0174f01ecb6541a1f56215d151e59, type: 3}
+  - {fileID: 21300000, guid: d2c2a1892ef9bfe409d6d27843feddd0, type: 3}
+  - {fileID: 21300000, guid: 3583c593dd6690448a44854ec27d7f41, type: 3}
+  - {fileID: 21300000, guid: 69fc66d05514e004c9aff4986df0955e, type: 3}
+  - {fileID: 21300000, guid: 9711aceb8cc457248a4b9cb50917df5f, type: 3}
+  - {fileID: 21300000, guid: 28395f8794d90af40a4398b1bf9e715f, type: 3}
+  animationName: 
+  instanceId: 
