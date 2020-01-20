@@ -39,15 +39,24 @@ public class Player_Input : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.FindGameObjectWithTag("Player Spawn") != null)
+        {
+           transform.position =  GameObject.FindGameObjectWithTag("Player Spawn").transform.position;
+
+        }
+
         canMove = true;
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //dataValidation();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponentInChildren<Game_Controller>();
+
+        //dataValidation();
+
 
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
         float dirHorizontal = Input.GetAxis("Horizontal");

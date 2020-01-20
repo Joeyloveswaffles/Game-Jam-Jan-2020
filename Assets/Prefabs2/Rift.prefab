@@ -109,5 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a8938e2e675bc42899496b5ab75503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Scene1
-  eIsPressed: 1
+  levelChanger: {fileID: 0}
+  debug: 0
+  riftPresent: 0
+  riftLevelIndex: 3
+  voidLevelIndex: 0
+  playerWithinRange: 0

@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Final Game Scenes/Main Menu  Scene 0.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/Scene1.unity
-=======
-- path: Assets/Scenes/Menu.unity
->>>>>>> d2ede0357355330f26db108771e23b27199aa68c
->>>>>>> 9e721bfa92c17352c292cc2f8e57f0697a0a2be3
+- path: Assets/Scenes/Final Game Scenes/The Void 1.unity
   isLoaded: 1
   isActive: 1

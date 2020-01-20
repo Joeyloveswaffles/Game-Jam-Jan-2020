@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Game Scenes/The Vault.unity
     guid: ce16d1e1a0efc034ab28eb3b998f0d9c
   - enabled: 1
+    path: Assets/Scenes/Final Game Scenes/The Void 1.unity
+    guid: cb0bf913307639345bd575388064ed39
+  - enabled: 1
     path: Assets/Scenes/Final Game Scenes/Ending Scene.unity
     guid: a2d210d781c0a0d4c98526b49c7603b2
   - enabled: 0

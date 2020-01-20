@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114107454802516514}
   - component: {fileID: 3725922855978911905}
   - component: {fileID: 8246671968125271267}
+  - component: {fileID: 114201063836303570}
   m_Layer: 10
   m_Name: Enemy Type 1
   m_TagString: Enemy
@@ -79,6 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   healthbar: {fileID: 9200283298655472032}
+  damage: 0
+  colliderCilissionName: 
 --- !u!61 &3725922855978911905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,6 +134,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114201063836303570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614436595141564244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71bd98c158f44b4aa3fa01233797270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testPath: {fileID: 5354107869123050768, guid: 89bf52715a7aab741a673ee705cff1ef,
+    type: 3}
+  pathfindingStructures: []
+  velocity: 0
+  target: {fileID: 0}
+  detectionRange: 0
+  pathFindingTarget: {fileID: 0}
+  currentTargetName: 
+  magnitude: 0
+  points: []
+  dir: {x: 0, y: 0, z: 0}
+  persueTarget: 0
+  attackingTarget: 0
+  patrol: 0
+  startNewPath: 0
+  interupt: 0
+  objectInRange: 
+  state: 0
 --- !u!1001 &516129931573379379
 PrefabInstance:
   m_ObjectHideFlags: 0
