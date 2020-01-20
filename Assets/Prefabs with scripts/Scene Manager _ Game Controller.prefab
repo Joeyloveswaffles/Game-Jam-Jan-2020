@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 5693445360621892552}
   m_Layer: 0
   m_Name: Scene Manager _ Game Controller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -354,6 +354,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61df226270dd31d40bc215ca30db541e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetFrameRate: 0
+  screenOverlay: {fileID: 0}
+  mouseX: 0
+  mouseY: 0
+  CenterX: 0
+  CenterY: 0
 --- !u!114 &2085843390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +388,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 676986613}
     m_Modifications:
+    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,20 +498,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8591358279861547620, guid: 2da8a32b3e830274b9344496c86a39fa,
+    - target: {fileID: 4886636670796656400, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
-      propertyPath: m_FillAmount
-      value: 1
+      propertyPath: m_AnchoredPosition.y
+      value: -0.13999939
       objectReference: {fileID: 0}
-    - target: {fileID: 8591358279861547620, guid: 2da8a32b3e830274b9344496c86a39fa,
+    - target: {fileID: 4591102303114744045, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_AnchoredPosition.x
+      value: -0.17602539
       objectReference: {fileID: 0}
-    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+    - target: {fileID: 4591102303114744045, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
-      propertyPath: m_Name
-      value: HealthBar
+      propertyPath: m_AnchoredPosition.y
+      value: -0.14035988
       objectReference: {fileID: 0}
     - target: {fileID: 4539421113703917651, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
@@ -528,20 +539,15 @@ PrefabInstance:
       propertyPath: m_FillMethod
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4886636670796656400, guid: 2da8a32b3e830274b9344496c86a39fa,
+    - target: {fileID: 8591358279861547620, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.13999939
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4591102303114744045, guid: 2da8a32b3e830274b9344496c86a39fa,
+    - target: {fileID: 8591358279861547620, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.17602539
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591102303114744045, guid: 2da8a32b3e830274b9344496c86a39fa,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.14035988
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8684155703682746515, guid: 2da8a32b3e830274b9344496c86a39fa, type: 3}

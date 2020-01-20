@@ -33,6 +33,10 @@ public class AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
         state = State.Idle;
         startNewPath = true;
 
@@ -104,15 +108,20 @@ public class AI : MonoBehaviour
     // only if it is patrolling
     public void moveTowardsPathFindingTarget()
     {
-        this.points = points;
-        Vector3 dir   = pathFindingTarget.transform.position - gameObject.transform.position;
-        dir = dir.normalized;
-        dir = new Vector3(dir.x * velocity, dir.y * velocity, 0);
-        this.dir = dir;
-        gameObject.transform.position += dir;
-        Vector2 x1 = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-        Vector2 x2 = new Vector2(pathFindingTarget.transform.position.x, pathFindingTarget.transform.position.y);
-        magnitude = Vector2.Distance(x1, x2);
+        if (interupt == false)
+        {
+            this.points = points;
+            Vector3 dir = pathFindingTarget.transform.position - gameObject.transform.position;
+            dir = dir.normalized;
+            dir = new Vector3(dir.x * velocity, dir.y * velocity, 0);
+            this.dir = dir;
+            gameObject.transform.position += dir;
+            Vector2 x1 = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            Vector2 x2 = new Vector2(pathFindingTarget.transform.position.x, pathFindingTarget.transform.position.y);
+            magnitude = Vector2.Distance(x1, x2);
+        }
+
+        checkPlayerDistance();
 
 
     }
@@ -163,8 +172,10 @@ public class AI : MonoBehaviour
              x2 = new Vector2(pathFindingTarget.transform.position.x, pathFindingTarget.transform.position.y);
             magnitude = Vector2.Distance(x1, x2);
             yield return new WaitUntil(() => magnitude <= 1f);
+            interupt = true;
 
             yield return new WaitForSeconds(1.5f);
+            interupt = false;
 
         }
 

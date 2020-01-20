@@ -8,6 +8,7 @@ public class Camera_Follow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         float z = gameObject.transform.position.z;
         transform.position = new Vector3(player.position.x, player.position.y,  z);
         

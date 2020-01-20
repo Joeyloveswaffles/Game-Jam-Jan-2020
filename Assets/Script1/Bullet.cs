@@ -54,6 +54,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.SendMessage("recieveDamage", this.damage);
+        }
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.SendMessage("recieveDamage", this.damage);

@@ -48,9 +48,11 @@ MonoBehaviour:
   testPath: {fileID: 4023422757041765763, guid: 56b7342c188acca4c9553f9822c70215,
     type: 3}
   pathfindingStructures:
-  - {fileID: 0}
+  - {fileID: 5354107869123050768, guid: 89bf52715a7aab741a673ee705cff1ef, type: 3}
+  - {fileID: 4023422757041765763, guid: 56b7342c188acca4c9553f9822c70215, type: 3}
   velocity: 0.1
   target: {fileID: 0}
+  detectionRange: 0
   pathFindingTarget: {fileID: 0}
   currentTargetName: 
   magnitude: 0
