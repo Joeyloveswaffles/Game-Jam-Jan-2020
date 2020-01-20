@@ -79,7 +79,7 @@ public class Gun : MonoBehaviour
     {
         if (currentAmmo > 0 && currentAmmo <= clipSize)
         {
-            gameObject.GetComponentInParent<Gun_Animation_Manager>().shootAnimation();
+          
             canShoot = false;
             source.clip = firesound;
             source.Play();

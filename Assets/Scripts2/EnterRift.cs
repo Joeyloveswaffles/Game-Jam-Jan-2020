@@ -23,7 +23,13 @@ public class EnterRift : MonoBehaviour
         findRift();
         if (Input.GetButtonDown("Interact") && playerWithinRange)
         {
-            if (getCurrentLevelIndex() == voidLevelIndex)
+            if (getCurrentLevelIndex() == 1)
+            {
+                levelChanger.FadeToLevel(3);
+
+
+            }
+            else if  (getCurrentLevelIndex() == voidLevelIndex)
             {
                 Debug.Log("changing scenes");
                 levelChanger.FadeToLevel(riftLevelIndex);

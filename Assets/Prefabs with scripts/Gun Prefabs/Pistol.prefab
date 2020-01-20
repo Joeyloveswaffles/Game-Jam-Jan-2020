@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 212547707097424438}
   - component: {fileID: 114035820914392398}
   - component: {fileID: 8044323839238694557}
+  - component: {fileID: 1701137998290187955}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -180,7 +181,7 @@ MonoBehaviour:
   shootIsCalled: 0
   reloadIsCalled: 0
   muzzleFlash: {fileID: 0}
-  shootControl: 112
+  shootControl: 323
   reloadControl: 114
   bulletSpawn: {fileID: 9075607748102128526}
   bulletPrefab: {fileID: 4623153606439624215, guid: c2868606aa6220f4781efb61fae7b38d,
@@ -285,3 +286,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1701137998290187955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587667940552248909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241c108bd8ab1e04496bfe78e2ef491f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 114035820914392398}
+  render: {fileID: 6489703811947578504}
+  effectsRender: {fileID: 0}
+  muzzleFlash: {fileID: 0}
