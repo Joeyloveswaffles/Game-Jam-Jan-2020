@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private Player_Singleton savedInstance;
     public HealthBar healthBar;
     public Gun gun;
-    public float currentHealth;
+    
 
     
 
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
 
     [Header("Debug")]
+    public float currentHealth;
     public Vector2 currentDirection;
     public Vector2 debugDir;
     public bool alive;

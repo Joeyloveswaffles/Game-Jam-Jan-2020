@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationManager: {fileID: 2280240496431388228}
-  faceAwayFromPlayer: {fileID: 11400000, guid: ada05484f0152914494143ec044c740f, type: 2}
-  faceToPlayer: {fileID: 11400000, guid: 818b8c7b56c0a7e459873966084a773b, type: 2}
+  faceAwayFromPlayer: {fileID: 11400000, guid: 818b8c7b56c0a7e459873966084a773b, type: 2}
+  faceToPlayer: {fileID: 11400000, guid: ada05484f0152914494143ec044c740f, type: 2}
 --- !u!1 &4116526330213640702
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
   inputs: {fileID: 4642253258959854287}
   healthBar: {fileID: 8263657987346190690}
   gun: {fileID: 114035820914392398, guid: 703e9f6efe3949c4b98221f64794d45e, type: 3}
-  currentHealth: 0
+  currentHealth: 100
   currentDirection: {x: 0.0042458996, y: 0.0042458996}
   debugDir: {x: 0, y: 0}
   alive: 0
@@ -535,6 +535,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!223 &3765141752419804866
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165249877464994090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &732460227448248817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -542,6 +563,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7100394197759635470}
     m_Modifications:
+    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,22 +626,12 @@ PrefabInstance:
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.5
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -0.7599945
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.070007324
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
@@ -647,13 +663,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2da8a32b3e830274b9344496c86a39fa, type: 3}
+--- !u!1 &7165249877464994090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 732460227448248817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5685128683593946078 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
@@ -666,7 +683,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 732460227448248817}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7165249877464994090}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 989ea291fa22aa741a4c2ce9cfc0c57e, type: 3}

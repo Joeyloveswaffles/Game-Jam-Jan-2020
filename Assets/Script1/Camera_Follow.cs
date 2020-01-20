@@ -8,10 +8,9 @@ public class Camera_Follow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-=======
-        DontDestroyOnLoad(gameObject);
->>>>>>> 80dd0e1182034345f5760da51fe2db869d72acce
+
+       
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         float z = gameObject.transform.position.z;
         transform.position = new Vector3(player.position.x, player.position.y,  z);
@@ -21,6 +20,10 @@ public class Camera_Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         float z = gameObject.transform.position.z;
         transform.position = new Vector3(player.position.x, player.position.y, z);
 

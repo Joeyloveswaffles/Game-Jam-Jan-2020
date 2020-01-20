@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Scene3.unity
-=======
-- path: Assets/Scenes/Final Game Scenes/The Void 1.unity
->>>>>>> 80dd0e1182034345f5760da51fe2db869d72acce
+- path: Assets/Scenes/Final Game Scenes/Opening Scene Labortory  Scene 1.unity
   isLoaded: 1
   isActive: 1
