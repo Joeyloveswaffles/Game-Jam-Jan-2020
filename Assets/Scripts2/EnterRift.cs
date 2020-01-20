@@ -9,7 +9,7 @@ public class EnterRift : MonoBehaviour
     public int debug;
     public bool riftPresent;
     public int riftLevelIndex;
-    public int voidLevelIndex;
+    public const int voidLevelIndex = 3;
     public bool playerWithinRange;
 
     private void Start()

@@ -18,11 +18,14 @@ public class AI : MonoBehaviour
     public float detectionRange;
 
     [Header("Debug")]
+    public string triggerInfo;
+    public string collisionInfo;
     public GameObject pathFindingTarget;
     public string currentTargetName;
     public float magnitude;
     public Transform[] points;
     public Vector3 dir;
+    public bool skipTarget;
     public bool persueTarget;
     public bool attackingTarget;
     public bool patrol;
@@ -68,12 +71,11 @@ public class AI : MonoBehaviour
         {
             if (interupt)
             {
-                StopAllCoroutines();
-                dir = new Vector2(0, 0);
-                gameObject.transform.position = transform.position;
+                
             }
             if (startNewPath)
             {
+                StopAllCoroutines();
                 startPatrol();
                 startNewPath = false;
             }
@@ -139,10 +141,14 @@ public class AI : MonoBehaviour
 
     public void startPatrol()
     {
-        Transform[] points = new Transform[testPath.transform.childCount];
-        for (int i = 0; i < testPath.transform.childCount; i++)
+        GameObject path = Instantiate(testPath, gameObject.transform.position, Quaternion.identity) as GameObject;
+        path.name = gameObject.name + "activePath";
+
+        Transform[] points = new Transform[path.transform.childCount];
+        for (int i = 0; i < path.transform.childCount; i++)
         {
-            points[i] = testPath.transform.GetChild(i);
+
+            points[i] = path.transform.GetChild(i);
         }
         this.points = points;
         StartCoroutine(startPath(points));
@@ -161,39 +167,67 @@ public class AI : MonoBehaviour
         int index = 0;
         Vector2 x1;
         Vector2 x2;
+        Vector3 startPosition = gameObject.transform.position;
         for (int i = 0; i < points.Length; i++)
         {
             
             Transform point = points[i];
             pathFindingTarget = point.gameObject;
             currentTargetName = points[i].name;
+            
 
             x1 = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
              x2 = new Vector2(pathFindingTarget.transform.position.x, pathFindingTarget.transform.position.y);
             magnitude = Vector2.Distance(x1, x2);
-            yield return new WaitUntil(() => magnitude <= 1f);
+            yield return new WaitUntil(() => magnitude <= 0.1f || skipTarget == true);
             interupt = true;
 
-            yield return new WaitForSeconds(1.5f);
+            if (skipTarget)
+            {
+                skipTarget = false;
+            }
+            else
+            {
+                yield return new WaitForSeconds(1.5f);
+            }
             interupt = false;
 
         }
 
-        // returns to origin
+       
 
+        // returns to origin
+        
         Transform point1 = points[0];
         pathFindingTarget = point1.gameObject;
         currentTargetName = points[0].name;
 
-         x1 = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        
+
+
+        x1 = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
          x2 = new Vector2(pathFindingTarget.transform.position.x, pathFindingTarget.transform.position.y);
         magnitude = Vector2.Distance(x1, x2);
-        yield return new WaitUntil(() => magnitude <= 1f);
+        yield return new WaitUntil(() => magnitude <= 0.1f || skipTarget == true);
+        gameObject.transform.position = startPosition;
+        startNewPath1();
+
+
+
+
+
+    }
+
+    public void startNewPath1()
+    {
         startNewPath = true;
+        Destroy(GameObject.Find(gameObject.name + "activePath"));
 
+    }
 
-
-
+    public void skipToNextTarget()
+    {
+        skipTarget = true;
 
     }
 
@@ -220,6 +254,7 @@ public class AI : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        triggerInfo = collision.name;
         if (collision.gameObject.name == target.name)
         {
             persueTarget = true;
@@ -236,6 +271,23 @@ public class AI : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        triggerInfo = "";
         objectInRange = "";
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        collisionInfo = collision.collider.name;
+        Debug.LogWarning("coliding");
+        if (collision.collider.gameObject.tag == "TileMapCollider")
+        {
+            skipToNextTarget();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collisionInfo = "";
+
     }
 }

@@ -79,6 +79,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggered: 0
   healthbar: {fileID: 4237990678764776653}
+  damage: 0
+  colliderCilissionName: 
 --- !u!61 &2529747165745763673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138,6 +140,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6000398800600282137}
     m_Modifications:
+    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -243,22 +255,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+    - target: {fileID: 8684155703682746515, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
-      propertyPath: m_Name
-      value: HealthBar
+      propertyPath: parentType
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7591429045256046811, guid: 2da8a32b3e830274b9344496c86a39fa,
+    - target: {fileID: 5367423271635671058, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6663037977462505442, guid: 2da8a32b3e830274b9344496c86a39fa,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5367423271635671058, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_Layer
       value: 10
