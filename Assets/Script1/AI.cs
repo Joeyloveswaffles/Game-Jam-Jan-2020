@@ -25,6 +25,7 @@ public class AI : MonoBehaviour
     public float magnitude;
     public Transform[] points;
     public Vector3 dir;
+    [Header("Debug states")]
     public bool skipTarget;
     public bool persueTarget;
     public bool attackingTarget;

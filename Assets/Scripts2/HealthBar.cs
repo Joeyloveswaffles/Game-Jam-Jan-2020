@@ -100,7 +100,9 @@ public class HealthBar : MonoBehaviour
         currentHealth -= damage;
        if ( currentHealth<= 0)
         {
-            Destroy(gameObject.transform.parent);
+            Destroy(gameObject.transform.parent.gameObject);
+            Debug.LogWarning("die");
+            
         }
 
     }

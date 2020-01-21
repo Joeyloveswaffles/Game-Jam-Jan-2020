@@ -22,9 +22,30 @@ public class Bullet : MonoBehaviour
             vectorDir = new Vector2(0, 0.25f);
         }
         player = GameObject.Find("Player").GetComponentInChildren<Player>();
-        vectorDir = new Vector2(player.currentDirection.x, player.currentDirection.y);
+        
+       
+        
+        
+        vectorDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
         vectorDir = vectorDir.normalized;
-        vectorDir = vectorDir / 8;
+        Debug.LogWarning(vectorDir);
+        
+        
+        float angle = (Vector2.Angle(transform.position, vectorDir));
+        if (vectorDir.x <= 0)
+        {
+             angle = (Vector2.Angle(transform.position, vectorDir));
+            angle += 90;
+        }
+        else
+        {
+            angle = (Vector2.Angle(vectorDir, transform.position));
+            angle = 0;
+        }
+
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        vectorDir /= 8;
     }
 
     // Update is called once per frame
@@ -55,14 +76,20 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+        Debug.LogError(collision.gameObject.name
+            );
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" &&  collision.gameObject != originParent)
         {
-            collision.gameObject.SendMessage("recieveDamage", this.damage);
+            collision.gameObject.GetComponentInChildren<HealthBar>().recieveDamage(this.damage);
+            Destroy(gameObject);
+            
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && collision.gameObject != originParent )
         {
-            collision.gameObject.SendMessage("recieveDamage", this.damage);
+            collision.gameObject.GetComponentInChildren<HealthBar>().recieveDamage(this.damage);
+            Destroy(gameObject);
+
         }
         collisionInfoName = collision.name;
     }

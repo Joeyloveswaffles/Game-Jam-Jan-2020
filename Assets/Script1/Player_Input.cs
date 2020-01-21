@@ -10,6 +10,8 @@ public class Player_Input : MonoBehaviour
     //public Inventory playerInventory;
 
     public Rigidbody2D body;
+
+    [Header("Speed Settings")]
     public float velocityHor;
     public float velocityVer;
 
@@ -34,8 +36,7 @@ public class Player_Input : MonoBehaviour
 
 
 
-    [SerializeField]
-    private float maxjumpHeight;
+   
     // Start is called before the first frame update
     void Start()
     {

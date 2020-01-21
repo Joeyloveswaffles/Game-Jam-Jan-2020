@@ -61,9 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Art\Animation Object.cs" />
-    <Compile Include="Assets\Game_Controller.cs" />
-    <Compile Include="Assets\Gun_Animation_Manager.cs" />
-    <Compile Include="Assets\Player_Animation_Manager.cs" />
+    <Compile Include="Assets\Graphic_Settings.cs" />
     <Compile Include="Assets\Script1\AI.cs" />
     <Compile Include="Assets\Script1\Animation_Manager.cs" />
     <Compile Include="Assets\Script1\Bullet.cs" />
@@ -72,13 +70,18 @@
     <Compile Include="Assets\Script1\Diolog_Manager.cs" />
     <Compile Include="Assets\Script1\Enemy.cs" />
     <Compile Include="Assets\Script1\Foot_Step_Manager.cs" />
+    <Compile Include="Assets\Script1\Game_Controller.cs" />
     <Compile Include="Assets\Script1\Game_Manager.cs" />
+    <Compile Include="Assets\Script1\Game_Settings.cs" />
     <Compile Include="Assets\Script1\Gun.cs" />
+    <Compile Include="Assets\Script1\Gun_Animation_Manager.cs" />
     <Compile Include="Assets\Script1\Music_Autoplay.cs" />
     <Compile Include="Assets\Script1\Player.cs" />
+    <Compile Include="Assets\Script1\Player_Animation_Manager.cs" />
     <Compile Include="Assets\Script1\Player_Input.cs" />
     <Compile Include="Assets\Script1\Player_Singleton.cs" />
     <Compile Include="Assets\Script1\Rift_Animate.cs" />
+    <Compile Include="Assets\Script1\Sound_Settings.cs" />
     <Compile Include="Assets\Scripts2\ChangeGun.cs" />
     <Compile Include="Assets\Scripts2\CutSceneEnd.cs" />
     <Compile Include="Assets\Scripts2\Death.cs" />

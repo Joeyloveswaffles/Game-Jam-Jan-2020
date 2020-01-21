@@ -86,6 +86,7 @@ public class Gun : MonoBehaviour
             GameObject bulletObj = bulletPrefab;
             GameObject newBullet = Instantiate(bulletObj, bulletSpawn.position, Quaternion.identity) as GameObject;
             newBullet.transform.position = bulletSpawn.position;
+            newBullet.gameObject.GetComponentInChildren<Bullet>().originParent = gameObject.transform.parent.gameObject;
             currentAmmo -= 1;
 
             StartCoroutine(fireRateDelay());

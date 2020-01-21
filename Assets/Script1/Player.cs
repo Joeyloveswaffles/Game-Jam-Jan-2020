@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Player_Input inputs;
-    private Player_Singleton savedInstance;
+    public Game_Settings gameSettings;
+    public Player_Singleton savedInstance;
     public HealthBar healthBar;
     public Gun gun;
     
@@ -28,10 +29,19 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (gameSettings == null)
+        {
+           gameSettings =  GameObject.FindGameObjectWithTag("Game Settings").GetComponentInChildren<Game_Settings>();
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player Respawn") != null)
+        {
+            transform.position = GameObject.FindGameObjectWithTag("Player Respawn").transform.position;
+        }
        
         currency = 0;
         savedInstance = Player_Singleton.getInstance(new Player_Singleton());
-        loadData();
+        //loadData();
         DontDestroyOnLoad(gameObject);
        
 
@@ -40,7 +50,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        saveData();
+        //saveData();
         if (inputs.canMove)
         {
             /*
@@ -65,6 +75,10 @@ public class Player : MonoBehaviour
     
     public void saveData()
     {
+        if (healthBar == null)
+        {
+            healthBar = gameObject.GetComponentInChildren<HealthBar>();
+        }
         savedInstance.healthBar = healthBar;
         savedInstance.currentHealth = healthBar.currentHealth;
         currentHealth = savedInstance.currentHealth;

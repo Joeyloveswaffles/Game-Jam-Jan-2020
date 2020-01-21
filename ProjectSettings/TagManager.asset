@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Player Spawn
   - TileMapCollider
+  - Game Settings
+  - Sound Settings
+  - Graphic Settings
   layers:
   - Default
   - TransparentFX

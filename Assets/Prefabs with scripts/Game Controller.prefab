@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetFrameRate: 120
   screenOverlay: {fileID: 5745953181579772740}
+  player: {fileID: 5485327080243840476, guid: 47debfe881e32a141979862695b1399e, type: 3}
   mouseX: 0
   mouseY: 0
   CenterX: 0

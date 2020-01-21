@@ -260,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 5485327080243840476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.7313664, y: 31.276962, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 975176884571123457}
   - {fileID: 4153718893028653910}
@@ -303,7 +303,6 @@ MonoBehaviour:
   centerX: 0
   centerY: 0
   projectileLookDir: {x: 0, y: 0}
-  maxjumpHeight: 0
 --- !u!114 &3049431998707883809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: 4642253258959854287}
+  gameSettings: {fileID: 0}
   healthBar: {fileID: 8263657987346190690}
   gun: {fileID: 114035820914392398, guid: 703e9f6efe3949c4b98221f64794d45e, type: 3}
   currentHealth: 100
@@ -626,12 +626,12 @@ PrefabInstance:
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.56
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.14
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: 4958351969898449455, guid: 2da8a32b3e830274b9344496c86a39fa,
         type: 3}
