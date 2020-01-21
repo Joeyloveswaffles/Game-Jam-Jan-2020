@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Art\Animation Object.cs" />
-    <Compile Include="Assets\Graphic_Settings.cs" />
+    <Compile Include="Assets\Boss_Eye.cs" />
     <Compile Include="Assets\Script1\AI.cs" />
     <Compile Include="Assets\Script1\Animation_Manager.cs" />
     <Compile Include="Assets\Script1\Bullet.cs" />
@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script1\Game_Controller.cs" />
     <Compile Include="Assets\Script1\Game_Manager.cs" />
     <Compile Include="Assets\Script1\Game_Settings.cs" />
+    <Compile Include="Assets\Script1\Graphic_Settings.cs" />
     <Compile Include="Assets\Script1\Gun.cs" />
     <Compile Include="Assets\Script1\Gun_Animation_Manager.cs" />
     <Compile Include="Assets\Script1\Music_Autoplay.cs" />

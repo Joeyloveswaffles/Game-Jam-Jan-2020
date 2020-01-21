@@ -142,7 +142,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
 --- !u!1 &7591429045256046811
 GameObject:
@@ -182,7 +182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.01910404, y: 0.9181036}
   m_AnchorMax: {x: 0.26489598, y: 0.9758966}
-  m_AnchoredPosition: {x: -3.66, y: 2.98}
+  m_AnchoredPosition: {x: -3.659912, y: 2.9799957}
   m_SizeDelta: {x: 15, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2676893179455958854
@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989ea291fa22aa741a4c2ce9cfc0c57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthFillAnimationTime: 5
   parentType: 3
   greenHealthBar: {fileID: 8591358279861547620}
   whiteHealthBar: {fileID: 4539421113703917651}
@@ -241,6 +242,7 @@ MonoBehaviour:
   waitTime: 0
   currentFillPercent: 0
   inVoid: 0
+  activateFillHealthBarAnimation: 0
 --- !u!223 &8655837713706512909
 Canvas:
   m_ObjectHideFlags: 0

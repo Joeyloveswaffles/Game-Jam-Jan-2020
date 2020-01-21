@@ -11,6 +11,8 @@ public class HealthBar : MonoBehaviour
     {
         Player,Enemy,Object,None
     }
+
+    public float healthFillAnimationTime;
     public ParentType parentType;
     public Image greenHealthBar;
     public Image whiteHealthBar;
@@ -20,6 +22,7 @@ public class HealthBar : MonoBehaviour
     public float waitTime;
     public float currentFillPercent;
     public bool inVoid;
+    public bool activateFillHealthBarAnimation;
 
     private void Start()
     {
@@ -56,6 +59,13 @@ public class HealthBar : MonoBehaviour
         if (inVoid == true && parentType == ParentType.Player)
         {
             StartCoroutine(depleteHealth());
+        }
+
+        if (activateFillHealthBarAnimation)
+        {
+            fillHealthBarAnimation();
+            activateFillHealthBarAnimation = false;
+
         }
     }
 
@@ -105,6 +115,30 @@ public class HealthBar : MonoBehaviour
             
         }
 
+    }
+
+    public void fillHealthBarAnimation()
+    {
+        StartCoroutine(FillHealthBarExecute());
+    }
+
+    public IEnumerator FillHealthBarExecute()
+    {
+        float x = currentHealth / maxHealth;
+        x = 300 * x;
+        int z = (int)x;
+        
+
+        for (int i = z; i <= 300; i++)
+        {
+            currentHealth = maxHealth * (x / 300);
+            x += 1;
+            currentFillPercent = currentHealth / maxHealth;
+            greenHealthBar.fillAmount = currentFillPercent;
+
+            yield return new WaitForSeconds((healthFillAnimationTime / 300 - z));
+        }
+        
     }
 
 
